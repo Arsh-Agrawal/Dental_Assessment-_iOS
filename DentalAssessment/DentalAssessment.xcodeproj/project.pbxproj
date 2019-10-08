@@ -3,18 +3,32 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C0B5FBCB8CFC19E12BCFA17 /* Pods_DentalAssessment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA845952C593ADDCF8E7B478 /* Pods_DentalAssessment.framework */; };
+		3F1A6FDB2348B3FC0029B93D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3F1A6FDA2348B3FC0029B93D /* GoogleService-Info.plist */; };
 		3F2B085823435AAB004B484C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2B085723435AAB004B484C /* AppDelegate.swift */; };
 		3F2B085A23435AAB004B484C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2B085923435AAB004B484C /* ViewController.swift */; };
 		3F2B085D23435AAB004B484C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F2B085B23435AAB004B484C /* Main.storyboard */; };
 		3F2B085F23435AAC004B484C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F2B085E23435AAC004B484C /* Assets.xcassets */; };
 		3F2B086223435AAC004B484C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F2B086023435AAC004B484C /* LaunchScreen.storyboard */; };
+		3FB3EA94234C810800CE1215 /* Patient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB3EA93234C810800CE1215 /* Patient.swift */; };
+		3FB3EA96234C8BD000CE1215 /* PatientAppointment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB3EA95234C8BD000CE1215 /* PatientAppointment.swift */; };
+		3FB3EA98234C902A00CE1215 /* CaseSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB3EA97234C902A00CE1215 /* CaseSheet.swift */; };
+		3FB3EA9A234C9D0300CE1215 /* PersonalHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB3EA99234C9D0300CE1215 /* PersonalHistory.swift */; };
+		3FB3EA9C234C9DB500CE1215 /* GeneralExamination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB3EA9B234C9DB500CE1215 /* GeneralExamination.swift */; };
+		3FB3EA9E234C9E2500CE1215 /* ExtraoralExamination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB3EA9D234C9E2500CE1215 /* ExtraoralExamination.swift */; };
+		3FB3EAA0234C9ECF00CE1215 /* IntraoralExamination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB3EA9F234C9ECF00CE1215 /* IntraoralExamination.swift */; };
+		3FB3EAA2234C9F1000CE1215 /* SoftTissueExamination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB3EAA1234C9F1000CE1215 /* SoftTissueExamination.swift */; };
+		3FB3EAA4234C9FBE00CE1215 /* GingivaExamination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB3EAA3234C9FBE00CE1215 /* GingivaExamination.swift */; };
+		3FB3EAA8234CA1C100CE1215 /* HardTissueExamination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB3EAA7234CA1C100CE1215 /* HardTissueExamination.swift */; };
+		3FB3EAAA234CA4A400CE1215 /* Doctor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB3EAA9234CA4A400CE1215 /* Doctor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3F1A6FDA2348B3FC0029B93D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3F2B085423435AAA004B484C /* DentalAssessment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DentalAssessment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F2B085723435AAB004B484C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3F2B085923435AAB004B484C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +36,20 @@
 		3F2B085E23435AAC004B484C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3F2B086123435AAC004B484C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3F2B086323435AAC004B484C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3FB3EA93234C810800CE1215 /* Patient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Patient.swift; sourceTree = "<group>"; };
+		3FB3EA95234C8BD000CE1215 /* PatientAppointment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientAppointment.swift; sourceTree = "<group>"; };
+		3FB3EA97234C902A00CE1215 /* CaseSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaseSheet.swift; sourceTree = "<group>"; };
+		3FB3EA99234C9D0300CE1215 /* PersonalHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalHistory.swift; sourceTree = "<group>"; };
+		3FB3EA9B234C9DB500CE1215 /* GeneralExamination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralExamination.swift; sourceTree = "<group>"; };
+		3FB3EA9D234C9E2500CE1215 /* ExtraoralExamination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtraoralExamination.swift; sourceTree = "<group>"; };
+		3FB3EA9F234C9ECF00CE1215 /* IntraoralExamination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntraoralExamination.swift; sourceTree = "<group>"; };
+		3FB3EAA1234C9F1000CE1215 /* SoftTissueExamination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoftTissueExamination.swift; sourceTree = "<group>"; };
+		3FB3EAA3234C9FBE00CE1215 /* GingivaExamination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GingivaExamination.swift; sourceTree = "<group>"; };
+		3FB3EAA7234CA1C100CE1215 /* HardTissueExamination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HardTissueExamination.swift; sourceTree = "<group>"; };
+		3FB3EAA9234CA4A400CE1215 /* Doctor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Doctor.swift; sourceTree = "<group>"; };
+		C7027E104CFF31494D333DF3 /* Pods-DentalAssessment.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DentalAssessment.release.xcconfig"; path = "Target Support Files/Pods-DentalAssessment/Pods-DentalAssessment.release.xcconfig"; sourceTree = "<group>"; };
+		D9B95394EB6FCDEE609DA7DD /* Pods-DentalAssessment.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DentalAssessment.debug.xcconfig"; path = "Target Support Files/Pods-DentalAssessment/Pods-DentalAssessment.debug.xcconfig"; sourceTree = "<group>"; };
+		EA845952C593ADDCF8E7B478 /* Pods_DentalAssessment.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DentalAssessment.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +57,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C0B5FBCB8CFC19E12BCFA17 /* Pods_DentalAssessment.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		127D77A25C3855D56EE5DC1B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EA845952C593ADDCF8E7B478 /* Pods_DentalAssessment.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		3F2B084B23435AAA004B484C = {
 			isa = PBXGroup;
 			children = (
 				3F2B085623435AAA004B484C /* DentalAssessment */,
 				3F2B085523435AAA004B484C /* Products */,
+				90C58536535C3B12C8315D2B /* Pods */,
+				127D77A25C3855D56EE5DC1B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -57,11 +96,32 @@
 				3F2B085723435AAB004B484C /* AppDelegate.swift */,
 				3F2B085923435AAB004B484C /* ViewController.swift */,
 				3F2B085B23435AAB004B484C /* Main.storyboard */,
+				3FB3EA93234C810800CE1215 /* Patient.swift */,
+				3FB3EA95234C8BD000CE1215 /* PatientAppointment.swift */,
+				3FB3EA97234C902A00CE1215 /* CaseSheet.swift */,
+				3FB3EAA9234CA4A400CE1215 /* Doctor.swift */,
+				3FB3EA99234C9D0300CE1215 /* PersonalHistory.swift */,
+				3FB3EA9B234C9DB500CE1215 /* GeneralExamination.swift */,
+				3FB3EA9D234C9E2500CE1215 /* ExtraoralExamination.swift */,
+				3FB3EA9F234C9ECF00CE1215 /* IntraoralExamination.swift */,
+				3FB3EAA7234CA1C100CE1215 /* HardTissueExamination.swift */,
+				3FB3EAA1234C9F1000CE1215 /* SoftTissueExamination.swift */,
+				3FB3EAA3234C9FBE00CE1215 /* GingivaExamination.swift */,
 				3F2B085E23435AAC004B484C /* Assets.xcassets */,
 				3F2B086023435AAC004B484C /* LaunchScreen.storyboard */,
 				3F2B086323435AAC004B484C /* Info.plist */,
+				3F1A6FDA2348B3FC0029B93D /* GoogleService-Info.plist */,
 			);
 			path = DentalAssessment;
+			sourceTree = "<group>";
+		};
+		90C58536535C3B12C8315D2B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D9B95394EB6FCDEE609DA7DD /* Pods-DentalAssessment.debug.xcconfig */,
+				C7027E104CFF31494D333DF3 /* Pods-DentalAssessment.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +131,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3F2B086623435AAC004B484C /* Build configuration list for PBXNativeTarget "DentalAssessment" */;
 			buildPhases = (
+				01D9D8318A3EB2E151CD5422 /* [CP] Check Pods Manifest.lock */,
 				3F2B085023435AAA004B484C /* Sources */,
 				3F2B085123435AAA004B484C /* Frameworks */,
 				3F2B085223435AAA004B484C /* Resources */,
+				0B8EA5091B75EDE7BD985634 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -123,6 +185,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F2B086223435AAC004B484C /* LaunchScreen.storyboard in Resources */,
+				3F1A6FDB2348B3FC0029B93D /* GoogleService-Info.plist in Resources */,
 				3F2B085F23435AAC004B484C /* Assets.xcassets in Resources */,
 				3F2B085D23435AAB004B484C /* Main.storyboard in Resources */,
 			);
@@ -130,13 +193,66 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		01D9D8318A3EB2E151CD5422 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DentalAssessment-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		0B8EA5091B75EDE7BD985634 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DentalAssessment/Pods-DentalAssessment-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DentalAssessment/Pods-DentalAssessment-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DentalAssessment/Pods-DentalAssessment-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		3F2B085023435AAA004B484C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FB3EAA2234C9F1000CE1215 /* SoftTissueExamination.swift in Sources */,
 				3F2B085A23435AAB004B484C /* ViewController.swift in Sources */,
 				3F2B085823435AAB004B484C /* AppDelegate.swift in Sources */,
+				3FB3EA9A234C9D0300CE1215 /* PersonalHistory.swift in Sources */,
+				3FB3EAA4234C9FBE00CE1215 /* GingivaExamination.swift in Sources */,
+				3FB3EA9C234C9DB500CE1215 /* GeneralExamination.swift in Sources */,
+				3FB3EA9E234C9E2500CE1215 /* ExtraoralExamination.swift in Sources */,
+				3FB3EAA8234CA1C100CE1215 /* HardTissueExamination.swift in Sources */,
+				3FB3EA94234C810800CE1215 /* Patient.swift in Sources */,
+				3FB3EA98234C902A00CE1215 /* CaseSheet.swift in Sources */,
+				3FB3EA96234C8BD000CE1215 /* PatientAppointment.swift in Sources */,
+				3FB3EAA0234C9ECF00CE1215 /* IntraoralExamination.swift in Sources */,
+				3FB3EAAA234CA4A400CE1215 /* Doctor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,6 +396,7 @@
 		};
 		3F2B086723435AAC004B484C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D9B95394EB6FCDEE609DA7DD /* Pods-DentalAssessment.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -297,6 +414,7 @@
 		};
 		3F2B086823435AAC004B484C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C7027E104CFF31494D333DF3 /* Pods-DentalAssessment.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
