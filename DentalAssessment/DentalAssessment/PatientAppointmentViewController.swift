@@ -7,17 +7,41 @@
 //
 
 import UIKit
+import Firebase
 
 class PatientAppointmentViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
-    var postData = ["message1","message2","message3"]
-
+    var postData = [String]()
+    
+    var ref: DatabaseReference?
+    var dbHandle: DatabaseHandle?
+    
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Do any additional setup after loading the view.
         tableView.delegate = self
         tableView.dataSource = self
-        // Do any additional setup after loading the view.
+        
+        // set reference whenever the folder is loaded
+        ref = Database.database().reference()
+        
+        // checking if any new data inserted
+        
+        dbHandle = ref?.child("appointments").observe(.childAdded, with: { (snapshot) in
+            //convert the snapshot value to string
+            let post = snapshot.value as? String
+            
+            
+            if let val = post {
+                
+                //append the value to postData
+                self.postData.append(val)
+                self.tableView.reloadData()  //reloading the table to get the value
+            }
+        })
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
