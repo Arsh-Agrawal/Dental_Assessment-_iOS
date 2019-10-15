@@ -29,6 +29,7 @@
 		E9836E2A234CC83A004F4523 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9836E29234CC83A004F4523 /* DashboardViewController.swift */; };
 		E9836E302351D062004F4523 /* PatientAppointmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9836E2F2351D062004F4523 /* PatientAppointmentViewController.swift */; };
 		E9836E322355C655004F4523 /* PatientHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9836E312355C655004F4523 /* PatientHistoryViewController.swift */; };
+		E9836E342355D1A3004F4523 /* BasicDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9836E332355D1A3004F4523 /* BasicDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +58,7 @@
 		E9836E29234CC83A004F4523 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		E9836E2F2351D062004F4523 /* PatientAppointmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientAppointmentViewController.swift; sourceTree = "<group>"; };
 		E9836E312355C655004F4523 /* PatientHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientHistoryViewController.swift; sourceTree = "<group>"; };
+		E9836E332355D1A3004F4523 /* BasicDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicDetailsViewController.swift; sourceTree = "<group>"; };
 		EA845952C593ADDCF8E7B478 /* Pods_DentalAssessment.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DentalAssessment.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -107,6 +109,7 @@
 				E9836E29234CC83A004F4523 /* DashboardViewController.swift */,
 				E9836E2F2351D062004F4523 /* PatientAppointmentViewController.swift */,
 				E9836E312355C655004F4523 /* PatientHistoryViewController.swift */,
+				E9836E332355D1A3004F4523 /* BasicDetailsViewController.swift */,
 				3F2B085B23435AAB004B484C /* Main.storyboard */,
 				3FB3EA95234C8BD000CE1215 /* PatientAppointment.swift */,
 				3FB3EA93234C810800CE1215 /* Patient.swift */,
@@ -256,6 +259,7 @@
 				3F2B085A23435AAB004B484C /* ViewController.swift in Sources */,
 				3F2B085823435AAB004B484C /* AppDelegate.swift in Sources */,
 				3FB3EA9A234C9D0300CE1215 /* PersonalHistory.swift in Sources */,
+				E9836E342355D1A3004F4523 /* BasicDetailsViewController.swift in Sources */,
 				E9836E302351D062004F4523 /* PatientAppointmentViewController.swift in Sources */,
 				3FB3EAA4234C9FBE00CE1215 /* GingivaExamination.swift in Sources */,
 				3FB3EA9C234C9DB500CE1215 /* GeneralExamination.swift in Sources */,
