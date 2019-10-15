@@ -412,14 +412,39 @@
         <!--Prescription-->
         <scene sceneID="HsG-sB-2md">
             <objects>
-                <viewController id="zB6-8S-JVN" userLabel="Prescription" sceneMemberID="viewController">
+                <viewController id="zB6-8S-JVN" userLabel="Prescription" customClass="PatientHistoryViewController" customModule="DentalAssessment" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NVk-C4-lAD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dFL-zg-KHb">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PostCell" id="K44-Mn-cIj">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="K44-Mn-cIj" id="6DI-oE-JVN">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="HMy-ut-7Wr" firstAttribute="trailing" secondItem="dFL-zg-KHb" secondAttribute="trailing" id="4hW-W7-Uc5"/>
+                            <constraint firstItem="dFL-zg-KHb" firstAttribute="top" secondItem="HMy-ut-7Wr" secondAttribute="top" id="bkO-Rt-h4o"/>
+                            <constraint firstItem="HMy-ut-7Wr" firstAttribute="bottom" secondItem="dFL-zg-KHb" secondAttribute="bottom" id="iJX-vx-0Dh"/>
+                            <constraint firstItem="dFL-zg-KHb" firstAttribute="leading" secondItem="HMy-ut-7Wr" secondAttribute="leading" id="kYE-7h-q6N"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="HMy-ut-7Wr"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 1" id="yGS-Sd-JZE"/>
+                    <connections>
+                        <outlet property="tableView" destination="dFL-zg-KHb" id="Rkv-nj-NyU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h6r-ls-Mkx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
