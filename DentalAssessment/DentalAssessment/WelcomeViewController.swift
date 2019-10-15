@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class WelcomeViewController: UIViewController {
 
@@ -15,8 +16,27 @@ class WelcomeViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+
+    @IBOutlet var usernameField: UITextField!
+    @IBOutlet var passwordField: UITextField!
+    @IBOutlet var incorrectDetailsLabel: UILabel!
     
 
+    @IBAction func loginPressed(_ sender: Any) {
+        guard let username = usernameField.text else {return}
+        guard let password = passwordField.text else {return}
+        let view = self;
+        Auth.auth().signIn(withEmail: username, password: password){
+            [weak self] authResult, error in
+            guard self != nil else {return}
+            if let error = error {
+                print(error)
+                view.incorrectDetailsLabel.isHidden = false
+                return
+            }
+            view.performSegue(withIdentifier: "patientLoginSegue", sender: nil)
+        }
+    }
     /*
     // MARK: - Navigation
 
