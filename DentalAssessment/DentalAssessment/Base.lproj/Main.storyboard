@@ -57,7 +57,6 @@
         <!--Welcome_page-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="LoginPage" id="BYZ-38-t0r" userLabel="Welcome_page" customClass="WelcomeViewController" customModule="DentalAssessment" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -102,7 +101,7 @@
                                                 <rect key="frame" x="88" y="0.0" width="296" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" textContentType="password"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -151,10 +150,11 @@
                         <outlet property="incorrectDetailsLabel" destination="rso-fu-nlQ" id="Unn-FG-OJt"/>
                         <outlet property="passwordField" destination="N8k-fm-nLA" id="V9B-ab-rJN"/>
                         <outlet property="usernameField" destination="OjT-VK-wF2" id="G7X-cc-zIe"/>
-                        <segue destination="0Kd-pU-vTk" kind="show" id="PVb-zS-Lcd"/>
+                        <segue destination="0Kd-pU-vTk" kind="show" identifier="doctorLoginSegue" id="PVb-zS-Lcd"/>
                         <segue destination="0gw-Xn-XD5" kind="show" identifier="patientLoginSegue" id="Vyc-49-QCT"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1810.144927536232" y="611.38392857142856"/>
         </scene>

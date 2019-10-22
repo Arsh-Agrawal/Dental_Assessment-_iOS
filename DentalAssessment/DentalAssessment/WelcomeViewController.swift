@@ -8,9 +8,11 @@
 
 import UIKit
 import FirebaseAuth
+import Firebase
 
 class WelcomeViewController: UIViewController {
-
+    var ref : DatabaseReference?
+    var dbHandle: DatabaseHandle?
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -34,7 +36,26 @@ class WelcomeViewController: UIViewController {
                 view.incorrectDetailsLabel.isHidden = false
                 return
             }
-            view.performSegue(withIdentifier: "patientLoginSegue", sender: nil)
+            print("No errors")
+            guard let authResult = authResult else {return}
+            print("Valid result")
+            view.ref = Database.database().reference()
+            view.dbHandle = view.ref?.child("roles").child(authResult.user.uid).observe(.value, with: { (snapshot) in
+                if !snapshot.exists()
+                {
+                    print("snapshot returned but doesn't exist")
+                    return;
+                }
+                let value = snapshot.value as? NSDictionary
+                if let role = value?["role"] as? String {
+                    if role == "patient" {
+                        view.performSegue(withIdentifier: "patientLoginSegue", sender: nil)
+                    }
+                    else {
+                        view.performSegue(withIdentifier: "doctorLoginSegue", sender: nil)
+                    }
+                }
+            })
         }
     }
     /*
