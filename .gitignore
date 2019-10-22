@@ -68,3 +68,13 @@ fastlane/screenshots/**/*.png
 fastlane/test_output
 
 DentalAssessment/Pods/
+
+# OS X Finder
+.DS_Store
+
+# Automatic backup files
+*~.nib/
+*.swp
+*~
+*.dat
+*.dep

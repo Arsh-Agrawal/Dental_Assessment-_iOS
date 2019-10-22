@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XaZ-nh-SsR">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Appointments-->
+        <scene sceneID="CbA-qh-UGO">
+            <objects>
+                <viewController id="XaZ-nh-SsR" userLabel="Appointments" customClass="PatientAppointmentViewController" customModule="DentalAssessment" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fas-tY-FsN">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WS7-yq-lxz">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PostCell" id="0pp-hN-onW">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0pp-hN-onW" id="u1d-U6-piH">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="dBv-KM-1Jc" firstAttribute="bottom" secondItem="WS7-yq-lxz" secondAttribute="bottom" id="aCH-cx-I1a"/>
+                            <constraint firstItem="dBv-KM-1Jc" firstAttribute="trailing" secondItem="WS7-yq-lxz" secondAttribute="trailing" id="kAA-sx-jQZ"/>
+                            <constraint firstItem="WS7-yq-lxz" firstAttribute="leading" secondItem="dBv-KM-1Jc" secondAttribute="leading" id="mrw-df-ylP"/>
+                            <constraint firstItem="WS7-yq-lxz" firstAttribute="top" secondItem="dBv-KM-1Jc" secondAttribute="top" id="qKM-Hn-VQC"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="dBv-KM-1Jc"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="rww-1U-OPm" userLabel="Appointment"/>
+                    <connections>
+                        <outlet property="tableView" destination="WS7-yq-lxz" id="7f6-qw-OVO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ynC-5X-dTd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2167" y="-444"/>
+        </scene>
+    </scenes>
+</document>

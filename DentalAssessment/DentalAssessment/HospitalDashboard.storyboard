@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QyO-E7-iKh">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Dashboard-->
+        <scene sceneID="Bmk-FA-5g7">
+            <objects>
+                <viewController id="QyO-E7-iKh" userLabel="Dashboard" customClass="DashboardViewController" customModule="DentalAssessment" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="72h-I2-qeR">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dashboard" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tKO-3n-6We">
+                                <rect key="frame" x="151" y="110" width="130" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jiM-aC-E7F">
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="taN-Wl-J8l">
+                                        <rect key="frame" x="159" y="333.5" width="96" height="210"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GaZ-sX-Znf">
+                                                <rect key="frame" x="0.0" y="0.0" width="96" height="30"/>
+                                                <state key="normal" title="Department 1"/>
+                                                <connections>
+                                                    <segue destination="IV4-5l-16X" kind="show" id="3Rv-5s-vFh"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iLD-sA-mO8">
+                                                <rect key="frame" x="0.0" y="30" width="96" height="30"/>
+                                                <state key="normal" title="Department 2"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KrM-fT-bfT">
+                                                <rect key="frame" x="0.0" y="60" width="96" height="30"/>
+                                                <state key="normal" title="Department 3"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mPh-bY-Ob0">
+                                                <rect key="frame" x="0.0" y="90" width="96" height="30"/>
+                                                <state key="normal" title="Department 4"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RaI-mT-L0P">
+                                                <rect key="frame" x="0.0" y="120" width="96" height="30"/>
+                                                <state key="normal" title="Department 5"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sER-N8-U3j">
+                                                <rect key="frame" x="0.0" y="150" width="96" height="30"/>
+                                                <state key="normal" title="Department 6"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XGR-5i-MzZ">
+                                                <rect key="frame" x="0.0" y="180" width="96" height="30"/>
+                                                <state key="normal" title="Department 7"/>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" red="1" green="0.80000000000000004" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="taN-Wl-J8l" secondAttribute="trailing" constant="72" id="9Lo-HL-0og"/>
+                                    <constraint firstItem="taN-Wl-J8l" firstAttribute="centerY" secondItem="jiM-aC-E7F" secondAttribute="centerY" constant="12.5" id="Ogs-el-8o9"/>
+                                    <constraint firstAttribute="bottom" secondItem="taN-Wl-J8l" secondAttribute="bottom" constant="19" id="RBD-ve-VQ0"/>
+                                    <constraint firstItem="taN-Wl-J8l" firstAttribute="centerX" secondItem="jiM-aC-E7F" secondAttribute="centerX" id="dEK-qS-dZK"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="jiM-aC-E7F" firstAttribute="leading" secondItem="am2-yw-FMf" secondAttribute="leading" id="NaQ-Aq-dAZ"/>
+                            <constraint firstItem="jiM-aC-E7F" firstAttribute="top" secondItem="am2-yw-FMf" secondAttribute="top" id="lik-Ee-S7u"/>
+                            <constraint firstItem="jiM-aC-E7F" firstAttribute="trailing" secondItem="am2-yw-FMf" secondAttribute="trailing" id="trI-lt-1Ct"/>
+                            <constraint firstAttribute="bottom" secondItem="jiM-aC-E7F" secondAttribute="bottom" id="uzb-qa-CrV"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="am2-yw-FMf"/>
+                    </view>
+                    <connections>
+                        <segue destination="Tcu-Fh-Abt" kind="show" id="kaX-Ee-ceS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ThX-bF-hmd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-152.17391304347828" y="1846.875"/>
+        </scene>
+        <!--IncomingPatients-->
+        <scene sceneID="u0j-U2-4kg">
+            <objects>
+                <viewControllerPlaceholder storyboardName="IncomingPatients" referencedIdentifier="IncomingPatients" id="Tcu-Fh-Abt" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cmx-iU-dKy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="417" y="2034"/>
+        </scene>
+        <!--DepartmentOnePage-->
+        <scene sceneID="O2n-eF-WiX">
+            <objects>
+                <viewControllerPlaceholder storyboardName="DepartmentOnePage" id="IV4-5l-16X" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lHt-PK-xek" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="433" y="1665"/>
+        </scene>
+    </scenes>
+</document>

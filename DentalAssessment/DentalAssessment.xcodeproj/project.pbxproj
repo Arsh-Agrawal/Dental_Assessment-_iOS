@@ -25,6 +25,18 @@
 		3FB3EAA4234C9FBE00CE1215 /* GingivaExamination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB3EAA3234C9FBE00CE1215 /* GingivaExamination.swift */; };
 		3FB3EAA8234CA1C100CE1215 /* HardTissueExamination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB3EAA7234CA1C100CE1215 /* HardTissueExamination.swift */; };
 		3FB3EAAA234CA4A400CE1215 /* Doctor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB3EAA9234CA4A400CE1215 /* Doctor.swift */; };
+		3FB85BE5235F0DF500EC06E7 /* Appointments.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FB85BE4235F0DF500EC06E7 /* Appointments.storyboard */; };
+		3FB85BE7235F0E3500EC06E7 /* Prescriptions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FB85BE6235F0E3500EC06E7 /* Prescriptions.storyboard */; };
+		3FB85BE9235F0E9400EC06E7 /* PatientDashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FB85BE8235F0E9400EC06E7 /* PatientDashboard.storyboard */; };
+		3FB85BEB235F107900EC06E7 /* HospitalDashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FB85BEA235F107900EC06E7 /* HospitalDashboard.storyboard */; };
+		3FB85BED235F119F00EC06E7 /* DepartmentOnePage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FB85BEC235F119F00EC06E7 /* DepartmentOnePage.storyboard */; };
+		3FB85BEF235F146800EC06E7 /* IncomingPatients.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FB85BEE235F146800EC06E7 /* IncomingPatients.storyboard */; };
+		3FB85BF1235F1A1900EC06E7 /* PatientRegistration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FB85BF0235F1A1900EC06E7 /* PatientRegistration.storyboard */; };
+		3FB85BF3235F1BA700EC06E7 /* DoctorRegistration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FB85BF2235F1BA700EC06E7 /* DoctorRegistration.storyboard */; };
+		3FB85BF5235F1E4400EC06E7 /* PatientAssessment.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FB85BF4235F1E4400EC06E7 /* PatientAssessment.storyboard */; };
+		3FB85BF7235F1F2F00EC06E7 /* ReferPatient.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FB85BF6235F1F2F00EC06E7 /* ReferPatient.storyboard */; };
+		3FB85BF9235F201900EC06E7 /* CaseSheet.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FB85BF8235F201900EC06E7 /* CaseSheet.storyboard */; };
+		3FB85BFB235F216600EC06E7 /* Treatments.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FB85BFA235F216600EC06E7 /* Treatments.storyboard */; };
 		E9836E28234CC7E4004F4523 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9836E27234CC7E4004F4523 /* WelcomeViewController.swift */; };
 		E9836E2A234CC83A004F4523 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9836E29234CC83A004F4523 /* DashboardViewController.swift */; };
 		E9836E302351D062004F4523 /* PatientAppointmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9836E2F2351D062004F4523 /* PatientAppointmentViewController.swift */; };
@@ -52,6 +64,18 @@
 		3FB3EAA3234C9FBE00CE1215 /* GingivaExamination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GingivaExamination.swift; sourceTree = "<group>"; };
 		3FB3EAA7234CA1C100CE1215 /* HardTissueExamination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HardTissueExamination.swift; sourceTree = "<group>"; };
 		3FB3EAA9234CA4A400CE1215 /* Doctor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Doctor.swift; sourceTree = "<group>"; };
+		3FB85BE4235F0DF500EC06E7 /* Appointments.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Appointments.storyboard; sourceTree = "<group>"; };
+		3FB85BE6235F0E3500EC06E7 /* Prescriptions.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Prescriptions.storyboard; sourceTree = "<group>"; };
+		3FB85BE8235F0E9400EC06E7 /* PatientDashboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PatientDashboard.storyboard; sourceTree = "<group>"; };
+		3FB85BEA235F107900EC06E7 /* HospitalDashboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = HospitalDashboard.storyboard; sourceTree = "<group>"; };
+		3FB85BEC235F119F00EC06E7 /* DepartmentOnePage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DepartmentOnePage.storyboard; sourceTree = "<group>"; };
+		3FB85BEE235F146800EC06E7 /* IncomingPatients.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = IncomingPatients.storyboard; sourceTree = "<group>"; };
+		3FB85BF0235F1A1900EC06E7 /* PatientRegistration.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PatientRegistration.storyboard; sourceTree = "<group>"; };
+		3FB85BF2235F1BA700EC06E7 /* DoctorRegistration.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DoctorRegistration.storyboard; sourceTree = "<group>"; };
+		3FB85BF4235F1E4400EC06E7 /* PatientAssessment.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PatientAssessment.storyboard; sourceTree = "<group>"; };
+		3FB85BF6235F1F2F00EC06E7 /* ReferPatient.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ReferPatient.storyboard; sourceTree = "<group>"; };
+		3FB85BF8235F201900EC06E7 /* CaseSheet.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CaseSheet.storyboard; sourceTree = "<group>"; };
+		3FB85BFA235F216600EC06E7 /* Treatments.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Treatments.storyboard; sourceTree = "<group>"; };
 		C7027E104CFF31494D333DF3 /* Pods-DentalAssessment.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DentalAssessment.release.xcconfig"; path = "Target Support Files/Pods-DentalAssessment/Pods-DentalAssessment.release.xcconfig"; sourceTree = "<group>"; };
 		D9B95394EB6FCDEE609DA7DD /* Pods-DentalAssessment.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DentalAssessment.debug.xcconfig"; path = "Target Support Files/Pods-DentalAssessment/Pods-DentalAssessment.debug.xcconfig"; sourceTree = "<group>"; };
 		E9836E27234CC7E4004F4523 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
@@ -103,6 +127,19 @@
 		3F2B085623435AAA004B484C /* DentalAssessment */ = {
 			isa = PBXGroup;
 			children = (
+				3FB85BFA235F216600EC06E7 /* Treatments.storyboard */,
+				3FB85BF8235F201900EC06E7 /* CaseSheet.storyboard */,
+				3FB85BF6235F1F2F00EC06E7 /* ReferPatient.storyboard */,
+				3FB85BF4235F1E4400EC06E7 /* PatientAssessment.storyboard */,
+				3FB85BF2235F1BA700EC06E7 /* DoctorRegistration.storyboard */,
+				3FB85BF0235F1A1900EC06E7 /* PatientRegistration.storyboard */,
+				3FB85BEE235F146800EC06E7 /* IncomingPatients.storyboard */,
+				3FB85BEC235F119F00EC06E7 /* DepartmentOnePage.storyboard */,
+				3FB85BEA235F107900EC06E7 /* HospitalDashboard.storyboard */,
+				3FB85BE8235F0E9400EC06E7 /* PatientDashboard.storyboard */,
+				3FB85BE6235F0E3500EC06E7 /* Prescriptions.storyboard */,
+				3FB85BE4235F0DF500EC06E7 /* Appointments.storyboard */,
+				3F2B085B23435AAB004B484C /* Main.storyboard */,
 				3F2B085723435AAB004B484C /* AppDelegate.swift */,
 				3F2B085923435AAB004B484C /* ViewController.swift */,
 				E9836E27234CC7E4004F4523 /* WelcomeViewController.swift */,
@@ -110,7 +147,6 @@
 				E9836E2F2351D062004F4523 /* PatientAppointmentViewController.swift */,
 				E9836E312355C655004F4523 /* PatientHistoryViewController.swift */,
 				E9836E332355D1A3004F4523 /* BasicDetailsViewController.swift */,
-				3F2B085B23435AAB004B484C /* Main.storyboard */,
 				3FB3EA95234C8BD000CE1215 /* PatientAppointment.swift */,
 				3FB3EA93234C810800CE1215 /* Patient.swift */,
 				3FB3EA97234C902A00CE1215 /* CaseSheet.swift */,
@@ -201,8 +237,20 @@
 			files = (
 				3F2B086223435AAC004B484C /* LaunchScreen.storyboard in Resources */,
 				3F1A6FDB2348B3FC0029B93D /* GoogleService-Info.plist in Resources */,
+				3FB85BE9235F0E9400EC06E7 /* PatientDashboard.storyboard in Resources */,
+				3FB85BFB235F216600EC06E7 /* Treatments.storyboard in Resources */,
+				3FB85BE7235F0E3500EC06E7 /* Prescriptions.storyboard in Resources */,
 				3F2B085F23435AAC004B484C /* Assets.xcassets in Resources */,
+				3FB85BED235F119F00EC06E7 /* DepartmentOnePage.storyboard in Resources */,
+				3FB85BF5235F1E4400EC06E7 /* PatientAssessment.storyboard in Resources */,
 				3F2B085D23435AAB004B484C /* Main.storyboard in Resources */,
+				3FB85BF1235F1A1900EC06E7 /* PatientRegistration.storyboard in Resources */,
+				3FB85BF9235F201900EC06E7 /* CaseSheet.storyboard in Resources */,
+				3FB85BE5235F0DF500EC06E7 /* Appointments.storyboard in Resources */,
+				3FB85BEF235F146800EC06E7 /* IncomingPatients.storyboard in Resources */,
+				3FB85BF7235F1F2F00EC06E7 /* ReferPatient.storyboard in Resources */,
+				3FB85BF3235F1BA700EC06E7 /* DoctorRegistration.storyboard in Resources */,
+				3FB85BEB235F107900EC06E7 /* HospitalDashboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

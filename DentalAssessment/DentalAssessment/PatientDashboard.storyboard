@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Zvn-EH-k6d">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--PatientDashboard-->
+        <scene sceneID="x95-p0-M1W">
+            <objects>
+                <tabBarController id="Zvn-EH-k6d" userLabel="PatientDashboard" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="z4X-ka-ckT">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="0SO-h9-ISw" kind="relationship" relationship="viewControllers" id="GZl-4D-J25"/>
+                        <segue destination="3dV-zZ-Gwi" kind="relationship" relationship="viewControllers" id="Q6D-7Y-2lY"/>
+                        <segue destination="P9b-GY-E7j" kind="relationship" relationship="viewControllers" id="r7a-7I-Rtd"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TiF-Eg-4KK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-325" y="611"/>
+        </scene>
+        <!--Appointments-->
+        <scene sceneID="NXZ-Jl-ucY">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Appointments" id="P9b-GY-E7j" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="JNv-hu-gCN"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3vD-s0-oz2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="232" y="437"/>
+        </scene>
+        <!--Prescriptions-->
+        <scene sceneID="Aq0-GB-PDE">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Prescriptions" id="0SO-h9-ISw" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="Qtv-le-tOP"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Ne-Na-zet" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="228" y="611"/>
+        </scene>
+        <!--Treatments-->
+        <scene sceneID="l9a-RV-0Rr">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Treatments" id="3dV-zZ-Gwi" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vc7-de-8nh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="219" y="794"/>
+        </scene>
+    </scenes>
+</document>
