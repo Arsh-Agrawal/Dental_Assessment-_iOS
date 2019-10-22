@@ -18,59 +18,70 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dashboard" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tKO-3n-6We">
-                                <rect key="frame" x="151" y="110" width="130" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jiM-aC-E7F">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jiM-aC-E7F">
                                 <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                                 <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hospital Dashboard" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tKO-3n-6We">
+                                        <rect key="frame" x="96.5" y="8" width="221.5" height="31.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="taN-Wl-J8l">
-                                        <rect key="frame" x="159" y="333.5" width="96" height="210"/>
+                                        <rect key="frame" x="0.0" y="321" width="414" height="210"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GaZ-sX-Znf">
-                                                <rect key="frame" x="0.0" y="0.0" width="96" height="30"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="30"/>
                                                 <state key="normal" title="Department 1"/>
                                                 <connections>
                                                     <segue destination="IV4-5l-16X" kind="show" id="3Rv-5s-vFh"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iLD-sA-mO8">
-                                                <rect key="frame" x="0.0" y="30" width="96" height="30"/>
+                                                <rect key="frame" x="0.0" y="30" width="414" height="30"/>
                                                 <state key="normal" title="Department 2"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KrM-fT-bfT">
-                                                <rect key="frame" x="0.0" y="60" width="96" height="30"/>
+                                                <rect key="frame" x="0.0" y="60" width="414" height="30"/>
                                                 <state key="normal" title="Department 3"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mPh-bY-Ob0">
-                                                <rect key="frame" x="0.0" y="90" width="96" height="30"/>
+                                                <rect key="frame" x="0.0" y="90" width="414" height="30"/>
                                                 <state key="normal" title="Department 4"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RaI-mT-L0P">
-                                                <rect key="frame" x="0.0" y="120" width="96" height="30"/>
+                                                <rect key="frame" x="0.0" y="120" width="414" height="30"/>
                                                 <state key="normal" title="Department 5"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sER-N8-U3j">
-                                                <rect key="frame" x="0.0" y="150" width="96" height="30"/>
+                                                <rect key="frame" x="0.0" y="150" width="414" height="30"/>
                                                 <state key="normal" title="Department 6"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XGR-5i-MzZ">
-                                                <rect key="frame" x="0.0" y="180" width="96" height="30"/>
+                                                <rect key="frame" x="0.0" y="180" width="414" height="30"/>
                                                 <state key="normal" title="Department 7"/>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" red="1" green="0.80000000000000004" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                     </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select department:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Alg-cy-fiK">
+                                        <rect key="frame" x="8" y="59.5" width="147" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="taN-Wl-J8l" secondAttribute="trailing" constant="72" id="9Lo-HL-0og"/>
-                                    <constraint firstItem="taN-Wl-J8l" firstAttribute="centerY" secondItem="jiM-aC-E7F" secondAttribute="centerY" constant="12.5" id="Ogs-el-8o9"/>
-                                    <constraint firstAttribute="bottom" secondItem="taN-Wl-J8l" secondAttribute="bottom" constant="19" id="RBD-ve-VQ0"/>
+                                    <constraint firstAttribute="trailing" secondItem="taN-Wl-J8l" secondAttribute="trailing" id="5qQ-y5-3x5"/>
+                                    <constraint firstItem="tKO-3n-6We" firstAttribute="centerX" secondItem="jiM-aC-E7F" secondAttribute="centerX" id="7Rx-Wk-dAa"/>
+                                    <constraint firstItem="taN-Wl-J8l" firstAttribute="centerY" secondItem="jiM-aC-E7F" secondAttribute="centerY" id="Hrq-mJ-HfD"/>
+                                    <constraint firstItem="Alg-cy-fiK" firstAttribute="top" secondItem="tKO-3n-6We" secondAttribute="bottom" constant="20" id="QDU-Fp-xvr"/>
+                                    <constraint firstItem="tKO-3n-6We" firstAttribute="top" secondItem="jiM-aC-E7F" secondAttribute="top" constant="8" id="S0V-4z-rUc"/>
+                                    <constraint firstAttribute="trailing" secondItem="taN-Wl-J8l" secondAttribute="trailing" id="XQQ-VB-i3H"/>
                                     <constraint firstItem="taN-Wl-J8l" firstAttribute="centerX" secondItem="jiM-aC-E7F" secondAttribute="centerX" id="dEK-qS-dZK"/>
+                                    <constraint firstItem="taN-Wl-J8l" firstAttribute="centerX" secondItem="jiM-aC-E7F" secondAttribute="centerX" id="pE5-x5-bss"/>
+                                    <constraint firstItem="Alg-cy-fiK" firstAttribute="leading" secondItem="jiM-aC-E7F" secondAttribute="leading" constant="8" id="tgc-Hs-Cdu"/>
+                                    <constraint firstItem="taN-Wl-J8l" firstAttribute="leading" secondItem="jiM-aC-E7F" secondAttribute="leading" id="vmH-Vs-66d"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
