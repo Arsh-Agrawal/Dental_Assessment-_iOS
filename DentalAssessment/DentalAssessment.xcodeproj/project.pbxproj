@@ -37,6 +37,7 @@
 		3FB85BF7235F1F2F00EC06E7 /* ReferPatient.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FB85BF6235F1F2F00EC06E7 /* ReferPatient.storyboard */; };
 		3FB85BF9235F201900EC06E7 /* CaseSheet.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FB85BF8235F201900EC06E7 /* CaseSheet.storyboard */; };
 		3FB85BFB235F216600EC06E7 /* Treatments.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FB85BFA235F216600EC06E7 /* Treatments.storyboard */; };
+		3FCA12CF235F3EB5000AACA0 /* DocumentSerializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCA12CE235F3EB5000AACA0 /* DocumentSerializable.swift */; };
 		E9836E28234CC7E4004F4523 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9836E27234CC7E4004F4523 /* WelcomeViewController.swift */; };
 		E9836E2A234CC83A004F4523 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9836E29234CC83A004F4523 /* DashboardViewController.swift */; };
 		E9836E302351D062004F4523 /* PatientAppointmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9836E2F2351D062004F4523 /* PatientAppointmentViewController.swift */; };
@@ -76,6 +77,7 @@
 		3FB85BF6235F1F2F00EC06E7 /* ReferPatient.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ReferPatient.storyboard; sourceTree = "<group>"; };
 		3FB85BF8235F201900EC06E7 /* CaseSheet.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CaseSheet.storyboard; sourceTree = "<group>"; };
 		3FB85BFA235F216600EC06E7 /* Treatments.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Treatments.storyboard; sourceTree = "<group>"; };
+		3FCA12CE235F3EB5000AACA0 /* DocumentSerializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentSerializable.swift; sourceTree = "<group>"; };
 		C7027E104CFF31494D333DF3 /* Pods-DentalAssessment.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DentalAssessment.release.xcconfig"; path = "Target Support Files/Pods-DentalAssessment/Pods-DentalAssessment.release.xcconfig"; sourceTree = "<group>"; };
 		D9B95394EB6FCDEE609DA7DD /* Pods-DentalAssessment.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DentalAssessment.debug.xcconfig"; path = "Target Support Files/Pods-DentalAssessment/Pods-DentalAssessment.debug.xcconfig"; sourceTree = "<group>"; };
 		E9836E27234CC7E4004F4523 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
@@ -127,6 +129,27 @@
 		3F2B085623435AAA004B484C /* DentalAssessment */ = {
 			isa = PBXGroup;
 			children = (
+				3FCA12D1235F3FBD000AACA0 /* Models */,
+				3FCA12D0235F3F87000AACA0 /* Storyboards */,
+				3F2B085723435AAB004B484C /* AppDelegate.swift */,
+				3F2B085923435AAB004B484C /* ViewController.swift */,
+				E9836E27234CC7E4004F4523 /* WelcomeViewController.swift */,
+				E9836E29234CC83A004F4523 /* DashboardViewController.swift */,
+				E9836E2F2351D062004F4523 /* PatientAppointmentViewController.swift */,
+				E9836E312355C655004F4523 /* PatientHistoryViewController.swift */,
+				E9836E332355D1A3004F4523 /* BasicDetailsViewController.swift */,
+				3F2B085E23435AAC004B484C /* Assets.xcassets */,
+				3F2B086023435AAC004B484C /* LaunchScreen.storyboard */,
+				3F2B086323435AAC004B484C /* Info.plist */,
+				3F1A6FDA2348B3FC0029B93D /* GoogleService-Info.plist */,
+				3FCA12CE235F3EB5000AACA0 /* DocumentSerializable.swift */,
+			);
+			path = DentalAssessment;
+			sourceTree = "<group>";
+		};
+		3FCA12D0235F3F87000AACA0 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
 				3FB85BFA235F216600EC06E7 /* Treatments.storyboard */,
 				3FB85BF8235F201900EC06E7 /* CaseSheet.storyboard */,
 				3FB85BF6235F1F2F00EC06E7 /* ReferPatient.storyboard */,
@@ -140,13 +163,13 @@
 				3FB85BE6235F0E3500EC06E7 /* Prescriptions.storyboard */,
 				3FB85BE4235F0DF500EC06E7 /* Appointments.storyboard */,
 				3F2B085B23435AAB004B484C /* Main.storyboard */,
-				3F2B085723435AAB004B484C /* AppDelegate.swift */,
-				3F2B085923435AAB004B484C /* ViewController.swift */,
-				E9836E27234CC7E4004F4523 /* WelcomeViewController.swift */,
-				E9836E29234CC83A004F4523 /* DashboardViewController.swift */,
-				E9836E2F2351D062004F4523 /* PatientAppointmentViewController.swift */,
-				E9836E312355C655004F4523 /* PatientHistoryViewController.swift */,
-				E9836E332355D1A3004F4523 /* BasicDetailsViewController.swift */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		3FCA12D1235F3FBD000AACA0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
 				3FB3EA95234C8BD000CE1215 /* PatientAppointment.swift */,
 				3FB3EA93234C810800CE1215 /* Patient.swift */,
 				3FB3EA97234C902A00CE1215 /* CaseSheet.swift */,
@@ -158,12 +181,8 @@
 				3FB3EAA7234CA1C100CE1215 /* HardTissueExamination.swift */,
 				3FB3EAA1234C9F1000CE1215 /* SoftTissueExamination.swift */,
 				3FB3EAA3234C9FBE00CE1215 /* GingivaExamination.swift */,
-				3F2B085E23435AAC004B484C /* Assets.xcassets */,
-				3F2B086023435AAC004B484C /* LaunchScreen.storyboard */,
-				3F2B086323435AAC004B484C /* Info.plist */,
-				3F1A6FDA2348B3FC0029B93D /* GoogleService-Info.plist */,
 			);
-			path = DentalAssessment;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		90C58536535C3B12C8315D2B /* Pods */ = {
@@ -303,6 +322,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FCA12CF235F3EB5000AACA0 /* DocumentSerializable.swift in Sources */,
 				3FB3EAA2234C9F1000CE1215 /* SoftTissueExamination.swift in Sources */,
 				3F2B085A23435AAB004B484C /* ViewController.swift in Sources */,
 				3F2B085823435AAB004B484C /* AppDelegate.swift in Sources */,
