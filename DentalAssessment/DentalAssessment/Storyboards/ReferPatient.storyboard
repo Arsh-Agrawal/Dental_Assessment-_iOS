@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--ReferPatient-->
+        <!--Refer Patient-->
         <scene sceneID="AWe-U3-Crq">
             <objects>
-                <viewController storyboardIdentifier="ReferPatient" title="ReferPatient" id="GnE-AY-bsI" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ReferPatient" title="Refer Patient" id="GnE-AY-bsI" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YRU-Hv-DdN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
