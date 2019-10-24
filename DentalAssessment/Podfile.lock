@@ -1,4 +1,5 @@
 PODS:
+  - Eureka (5.0.1)
   - Firebase/Analytics (6.9.0):
     - Firebase/Core
   - Firebase/Auth (6.9.0):
@@ -84,12 +85,15 @@ PODS:
   - nanopb/encode (0.3.901)
 
 DEPENDENCIES:
+  - Eureka (~> 5.0.0)
   - Firebase/Analytics
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Database
 
 SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Eureka
   trunk:
     - Firebase
     - FirebaseAnalytics
@@ -109,6 +113,7 @@ SPEC REPOS:
     - nanopb
 
 SPEC CHECKSUMS:
+  Eureka: da9d2294da234eae40b22e7273b9fc2335502fc1
   Firebase: 2d750c54cda57d5a6ae31212cfe5cc813c6be7e4
   FirebaseAnalytics: 5d9ccbf46ed25d3ec9304d263f85bddf1e93e2d2
   FirebaseAuth: e7f86c2dfc57281cd01f7da5e4b40e01e4510a4a
@@ -126,6 +131,6 @@ SPEC CHECKSUMS:
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
 
-PODFILE CHECKSUM: c347a7d97a1a7b26e36f9e5f4f35ae5514b32994
+PODFILE CHECKSUM: 6a50541cd63ae64e3d0ee4b712d1977e8cab1b55
 
 COCOAPODS: 1.8.3

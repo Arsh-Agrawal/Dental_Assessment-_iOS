@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0C0B5FBCB8CFC19E12BCFA17 /* Pods_DentalAssessment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA845952C593ADDCF8E7B478 /* Pods_DentalAssessment.framework */; };
+		3F0725082361C68500699D59 /* CaseSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0725072361C68500699D59 /* CaseSheetViewController.swift */; };
 		3F1A6FDB2348B3FC0029B93D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3F1A6FDA2348B3FC0029B93D /* GoogleService-Info.plist */; };
 		3F2B085823435AAB004B484C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2B085723435AAB004B484C /* AppDelegate.swift */; };
 		3F2B085A23435AAB004B484C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2B085923435AAB004B484C /* ViewController.swift */; };
@@ -46,6 +47,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3F0725072361C68500699D59 /* CaseSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaseSheetViewController.swift; sourceTree = "<group>"; };
 		3F1A6FDA2348B3FC0029B93D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3F2B085423435AAA004B484C /* DentalAssessment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DentalAssessment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F2B085723435AAB004B484C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 				3FCA12D0235F3F87000AACA0 /* Storyboards */,
 				3F2B085723435AAB004B484C /* AppDelegate.swift */,
 				3F2B085923435AAB004B484C /* ViewController.swift */,
+				3F0725072361C68500699D59 /* CaseSheetViewController.swift */,
 				E9836E27234CC7E4004F4523 /* WelcomeViewController.swift */,
 				E9836E29234CC83A004F4523 /* DashboardViewController.swift */,
 				E9836E2F2351D062004F4523 /* PatientAppointmentViewController.swift */,
@@ -326,6 +329,7 @@
 				3FB3EAA2234C9F1000CE1215 /* SoftTissueExamination.swift in Sources */,
 				3F2B085A23435AAB004B484C /* ViewController.swift in Sources */,
 				3F2B085823435AAB004B484C /* AppDelegate.swift in Sources */,
+				3F0725082361C68500699D59 /* CaseSheetViewController.swift in Sources */,
 				3FB3EA9A234C9D0300CE1215 /* PersonalHistory.swift in Sources */,
 				E9836E342355D1A3004F4523 /* BasicDetailsViewController.swift in Sources */,
 				E9836E302351D062004F4523 /* PatientAppointmentViewController.swift in Sources */,
