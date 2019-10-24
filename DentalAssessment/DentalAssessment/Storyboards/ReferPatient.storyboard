@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--ReferPatient-->
+        <!--Refer Patient-->
         <scene sceneID="AWe-U3-Crq">
             <objects>
                 <viewController storyboardIdentifier="ReferPatient" title="ReferPatient" id="GnE-AY-bsI" customClass="ReferPatientViewController" customModule="DentalAssessment" customModuleProvider="target" sceneMemberID="viewController">
