@@ -8,15 +8,18 @@
 
 import UIKit
 
-class DashboardViewController: UIViewController {
-
+class HospitalDashboardViewController: UITableViewController {
+    let cellIdentifier = "departmentCellIdentifier"
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
-    
-
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if(indexPath.row > 0){
+            performSegue(withIdentifier: "incomingPatientsSegue", sender: nil)
+        }
+    }
     /*
     // MARK: - Navigation
 
