@@ -11,6 +11,7 @@ import FirebaseAuth
 import Firebase
 
 class WelcomeViewController: UIViewController {
+    var defaults = UserDefaults.standard
     var ref : DatabaseReference?
     var dbHandle: DatabaseHandle?
     override func viewDidLoad() {
@@ -38,6 +39,7 @@ class WelcomeViewController: UIViewController {
             }
             print("No errors")
             guard let authResult = authResult else {return}
+            view.defaults.set(authResult.user.uid, forKey: "userid")
             print("Valid result")
             view.ref = Database.database().reference()
             view.dbHandle = view.ref?.child("roles").child(authResult.user.uid).observe(.value, with: { (snapshot) in
