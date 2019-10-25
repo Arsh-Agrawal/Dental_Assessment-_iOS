@@ -29,6 +29,7 @@ class WelcomeViewController: UIViewController {
         guard let username = usernameField.text else {return}
         guard let password = passwordField.text else {return}
         let view = self;
+        takeUserToDashboard()
         Auth.auth().signIn(withEmail: username, password: password){
             [weak self] authResult, error in
             guard self != nil else {return}
@@ -41,24 +42,28 @@ class WelcomeViewController: UIViewController {
             guard let authResult = authResult else {return}
             view.defaults.set(authResult.user.uid, forKey: "userid")
             print("Valid result")
-            view.ref = Database.database().reference()
-            view.dbHandle = view.ref?.child("roles").child(authResult.user.uid).observe(.value, with: { (snapshot) in
-                if !snapshot.exists()
-                {
-                    print("snapshot returned but doesn't exist")
-                    return;
-                }
-                let value = snapshot.value as? NSDictionary
-                if let role = value?["role"] as? String {
-                    if role == "patient" {
-                        view.performSegue(withIdentifier: "patientLoginSegue", sender: nil)
-                    }
-                    else {
-                        view.performSegue(withIdentifier: "doctorLoginSegue", sender: nil)
-                    }
-                }
-            })
+            view.takeUserToDashboard()
         }
+    }
+    func takeUserToDashboard(){
+        ref = Database.database().reference()
+        guard let uid = defaults.string(forKey: "userid") else {return}
+        dbHandle = ref?.child("roles").child(uid).observe(.value, with: { (snapshot) in
+            if !snapshot.exists()
+            {
+                print("snapshot returned but doesn't exist")
+                return;
+            }
+            let value = snapshot.value as? NSDictionary
+            if let role = value?["role"] as? String {
+                if role == "patient" {
+                    self.performSegue(withIdentifier: "patientLoginSegue", sender: nil)
+                }
+                else {
+                    self.performSegue(withIdentifier: "doctorLoginSegue", sender: nil)
+                }
+            }
+        })
     }
     /*
     // MARK: - Navigation
