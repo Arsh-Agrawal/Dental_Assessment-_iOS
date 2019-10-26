@@ -13,29 +13,59 @@
         <!--IncomingPatients-->
         <scene sceneID="bbq-YT-o36">
             <objects>
-                <viewController storyboardIdentifier="IncomingPatients" title="IncomingPatients" id="7mA-1K-tmI" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="IncomingPatients" title="IncomingPatients" id="7mA-1K-tmI" customClass="IncomingPatientsViewController" customModule="DentalAssessment" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JqK-p1-OhM">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Department Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KEg-bW-NTk">
-                                <rect key="frame" x="137" y="56" width="141" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="List of Patients" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="otM-L3-AWq">
-                                <rect key="frame" x="150" y="153" width="114" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="IaV-7P-hsk">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HwI-wg-XQy">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="73"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="List Of Patients" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rnz-X7-MdC">
+                                                <rect key="frame" x="110" y="18" width="195" height="36"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QpW-cR-yZG">
+                                        <rect key="frame" x="0.0" y="73" width="414" height="745"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="tuQ-cZ-vqa">
+                                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tuQ-cZ-vqa" id="XaT-Bz-UGe">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </tableViewCellContentView>
+                                            </tableViewCell>
+                                        </prototypes>
+                                    </tableView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="QpW-cR-yZG" firstAttribute="height" secondItem="HwI-wg-XQy" secondAttribute="height" multiplier="10.2" id="Wfz-0K-Z1M"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="IaV-7P-hsk" firstAttribute="leading" secondItem="57D-Qc-DMG" secondAttribute="leading" id="2Wh-sL-jcv"/>
+                            <constraint firstItem="57D-Qc-DMG" firstAttribute="trailing" secondItem="IaV-7P-hsk" secondAttribute="trailing" id="A2Q-nl-NRI"/>
+                            <constraint firstItem="57D-Qc-DMG" firstAttribute="bottom" secondItem="IaV-7P-hsk" secondAttribute="bottom" id="ZDE-VJ-Hqc"/>
+                            <constraint firstItem="IaV-7P-hsk" firstAttribute="top" secondItem="57D-Qc-DMG" secondAttribute="top" id="eYd-80-4hR"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="57D-Qc-DMG"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="QpW-cR-yZG" id="9Yi-vY-qZJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ElC-mm-RHh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
