@@ -38,5 +38,35 @@ class CaseSheetViewController: FormViewController{
                 row.title = "Address"
                 row.placeholder = "Street Address\nLocality\nCity, State\nPincode"
             }
+              +++ Section("Details")
+            <<< TextRow() { row in
+                row.title = "Hosptial Number"
+                row.placeholder = "123"
+            }
+            <<< DateRow() {
+                $0.value = Date()
+                $0.title = "Date"
+                
+            }
+            <<< TextRow() { row in
+                row.title = "Illness History"
+                row.placeholder = "ilness history"
+            }
+            <<< TextRow() { row in
+                row.title = "Medical History"
+                row.placeholder = "medical history"
+            }
+            <<< TextRow() { row in
+                row.title = "Family History"
+                row.placeholder = "Family history"
+            }
+            <<< TextRow() { row in
+                row.title = "Personal History"
+                row.placeholder = "personal history"
+            }
+            <<< TextRow() { row in
+                row.title = "Illness History"
+                row.placeholder = "history"
+        }
     }
 }

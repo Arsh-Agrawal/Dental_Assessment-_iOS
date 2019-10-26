@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--IncomingPatients-->
+        <!--Incoming Patients-->
         <scene sceneID="bbq-YT-o36">
             <objects>
                 <viewController storyboardIdentifier="IncomingPatients" title="IncomingPatients" id="7mA-1K-tmI" customClass="IncomingPatientsViewController" customModule="DentalAssessment" customModuleProvider="target" sceneMemberID="viewController">

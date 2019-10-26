@@ -29,7 +29,7 @@ class WelcomeViewController: UIViewController {
         guard let username = usernameField.text else {return}
         guard let password = passwordField.text else {return}
         let view = self;
-        takeUserToDashboard()
+        //takeUserToDashboard()
         Auth.auth().signIn(withEmail: username, password: password){
             [weak self] authResult, error in
             guard self != nil else {return}
