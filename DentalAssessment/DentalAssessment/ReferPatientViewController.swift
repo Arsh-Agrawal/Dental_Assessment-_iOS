@@ -8,8 +8,11 @@
 
 import UIKit
 import Firebase
+import Eureka
+import Foundation
 
-class ReferPatientViewController: UIViewController {
+
+class ReferPatientViewController: UIViewController{
 
     
     @IBOutlet weak var deptNameTextField: UITextField!
@@ -24,7 +27,8 @@ class ReferPatientViewController: UIViewController {
     override func viewDidLoad() {
         
         patientIDLabel.text = patientID //automatic value set
-        
+        let form = forForm()
+        form.form_struct()
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
@@ -51,14 +55,28 @@ class ReferPatientViewController: UIViewController {
         
     }
     
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+}
+
+class forForm: FormViewController {
+    
+    func form_struct() {
+        
+        print("in the function")
+        form +++ Section("Details")
+            
+            <<< TextRow() { row in
+                row.title = "Patient ID"
+                row.placeholder = "123"
+            }
+            <<< ActionSheetRow<String>() {
+                $0.title = "Department"
+                $0.selectorTitle = "Pick Department"
+                $0.options = ["Department-1","Department-2","Department-3","Department-4","Department-5","Department-6","Department-7"]
+        }
+        
+        
+        
     }
-    */
-
+    
 }

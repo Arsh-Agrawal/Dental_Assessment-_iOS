@@ -13,7 +13,7 @@
         <!--CaseSheet-->
         <scene sceneID="Shh-uW-7dr">
             <objects>
-                <viewController storyboardIdentifier="CaseSheet" title="Case Sheet" id="WBO-Dx-DUk" userLabel="CaseSheet" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CaseSheet" title="Case Sheet" id="WBO-Dx-DUk" userLabel="CaseSheet" customClass="CaseViewController" customModule="DentalAssessment" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Mi5-8c-KBs">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
