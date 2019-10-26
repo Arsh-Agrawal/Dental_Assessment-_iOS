@@ -49,7 +49,11 @@ class IncomingPatientsViewController: UIViewController,UITableViewDelegate,UITab
         cell?.textLabel?.text = postData[indexPath.row]
         return cell!
     }
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if(indexPath.row > 0){
+            performSegue(withIdentifier: "caseSheetSegue", sender: nil)
+        }
+    }
 
     /*
     // MARK: - Navigation

@@ -15,7 +15,28 @@ class CaseViewController: FormViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        form +++ Section("Details")
+        form +++ Section("Personal Details")
+            <<< LabelRow() { row in
+                row.title = "Name"
+            }
+            <<< LabelRow() { row in
+                row.title = "Age"
+            }
+            <<< LabelRow() { row in
+                row.title = "Sex"
+            }
+            <<< PhoneRow() { row in
+                row.title = "Phone"
+                row.placeholder = "+91 1234567890"
+            }
+            <<< LabelRow {row in
+                row.title = "Address"
+            }
+            <<< TextAreaRow { row in
+                row.title = "Address"
+                row.placeholder = "Street Address\nLocality\nCity, State\nPincode"
+            }
+            +++ Section("Assessment")
             <<< TextRow() { row in
                 row.title = "Hosptial Number"
                 row.placeholder = "123"
@@ -25,26 +46,31 @@ class CaseViewController: FormViewController {
                 $0.title = "Date"
                 
             }
-            <<< TextRow() { row in
+            <<< LabelRow() { row in
                 row.title = "Illness History"
-                row.placeholder = "ilness history"
             }
-            <<< TextRow() { row in
+            <<< TextAreaRow { row in
+            }
+            <<< LabelRow() { row in
                 row.title = "Medical History"
-                row.placeholder = "medical history"
             }
-            <<< TextRow() { row in
+            <<< TextAreaRow { row in
+            }
+            <<< LabelRow() { row in
                 row.title = "Family History"
-                row.placeholder = "Family history"
             }
-            <<< TextRow() { row in
+            <<< TextAreaRow { row in
+            }
+            <<< LabelRow() { row in
                 row.title = "Personal History"
-                row.placeholder = "personal history"
             }
-            <<< TextRow() { row in
+            <<< TextAreaRow { row in
+            }
+            <<< LabelRow() { row in
                 row.title = "Illness History"
-                row.placeholder = "history"
             }
+            <<< TextAreaRow { row in
+        }
         
         }
         

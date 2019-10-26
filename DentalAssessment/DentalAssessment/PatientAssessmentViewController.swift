@@ -38,7 +38,7 @@ class CaseSheetViewController: FormViewController{
                 row.title = "Address"
                 row.placeholder = "Street Address\nLocality\nCity, State\nPincode"
             }
-              +++ Section("Details")
+              +++ Section("Assessment")
             <<< TextRow() { row in
                 row.title = "Hosptial Number"
                 row.placeholder = "123"
@@ -48,25 +48,30 @@ class CaseSheetViewController: FormViewController{
                 $0.title = "Date"
                 
             }
-            <<< TextRow() { row in
+            <<< LabelRow() { row in
                 row.title = "Illness History"
-                row.placeholder = "ilness history"
             }
-            <<< TextRow() { row in
+            <<< TextAreaRow { row in
+            }
+            <<< LabelRow() { row in
                 row.title = "Medical History"
-                row.placeholder = "medical history"
             }
-            <<< TextRow() { row in
+            <<< TextAreaRow { row in
+            }
+            <<< LabelRow() { row in
                 row.title = "Family History"
-                row.placeholder = "Family history"
             }
-            <<< TextRow() { row in
+            <<< TextAreaRow { row in
+            }
+            <<< LabelRow() { row in
                 row.title = "Personal History"
-                row.placeholder = "personal history"
             }
-            <<< TextRow() { row in
+            <<< TextAreaRow { row in
+            }
+            <<< LabelRow() { row in
                 row.title = "Illness History"
-                row.placeholder = "history"
-        }
+            }
+            <<< TextAreaRow { row in
+            }
     }
 }

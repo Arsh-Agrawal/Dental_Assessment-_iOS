@@ -20,6 +20,7 @@ class HospitalDashboardViewController: UITableViewController {
             performSegue(withIdentifier: "incomingPatientsSegue", sender: nil)
         }
     }
+    
     /*
     // MARK: - Navigation
 
