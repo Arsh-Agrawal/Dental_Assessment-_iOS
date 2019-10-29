@@ -9,11 +9,12 @@
 import Foundation
 
 struct SoftTissueExamination{
-    var labialMucose: String
-    var buccalMucose: String
-    var floorOfMouth: String
-    var tongue: String
-    var vestibules: String
-    var faucialPillers: String
-    var gingiva: GingivaExamination
+    var labialMucosa: String = ""
+    var buccalMucosa: String = ""
+    var palate: String = ""
+    var floorOfMouth: String = ""
+    var tongue: String = ""
+    var vestibules: String = ""
+    var faucialPillers: String = ""
+    var gingiva: GingivaExamination = GingivaExamination()
 }

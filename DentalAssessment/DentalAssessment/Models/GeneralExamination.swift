@@ -8,8 +8,8 @@
 
 import Foundation
 struct GeneralExamination{
-    var build: String
-    var gait: String
-    var vitals: String
-    var findings: String
+    var build: String = ""
+    var gait: String = ""
+    var vitals: String = ""
+    var findings: String = ""
 }

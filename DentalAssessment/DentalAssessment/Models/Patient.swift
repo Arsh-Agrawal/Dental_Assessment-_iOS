@@ -17,6 +17,7 @@ class Patient: DocumentSerializable {
     var address: String
     var maritalStatus: Bool?
     var occupation: String?
+    
     init(id: String, name: String, age: Int, sex: Int, phone: String, address: String, maritalStatus: Bool?, occupation: String?) {
         self.id = id
         self.name = name
@@ -25,6 +26,9 @@ class Patient: DocumentSerializable {
         self.phone = phone
         self.address = address
         self.maritalStatus = maritalStatus
+    }
+    convenience init(){
+        self.init(id: "", name: "", age: 0, sex: 0, phone: "", address: "", maritalStatus: nil, occupation: nil)
     }
     required convenience init?(from dict: [String : Any]) {
         guard let id = dict["id"] as? String else {return nil}

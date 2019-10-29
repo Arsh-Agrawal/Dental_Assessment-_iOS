@@ -9,23 +9,24 @@
 import Foundation
 
 struct CaseSheet{
-    var id: String
-    var patient: Patient
-    var hospitalNum: Int
-    var date: Date
-    var illnessHistory: String
-    var medicalHistory: String
-    var familyHistory: String
-    var personalHistory: PersonalHistory
-    var generalExamination: GeneralExamination
-    var extraoralExamination: ExtraoralExamination
-    var intraoralExamination: IntraoralExamination
-    var clinicalDiagnosis: String
-    var differentialDiagnosis: String
-    var investigationsAndResults: String
-    var finalDiagnosis: String
-    var treatmentPlan: String
-    var prescriptions: [String]
+    var id: String = ""
+    var patient: Patient = Patient()
+    var hospitalNum: Int = 0
+    var date: Date = Date()
+    var illnessHistory: String = ""
+    var medicalHistory: String = ""
+    var familyHistory: String = ""
+    var dentalHistory: String = ""
+    var personalHistory: PersonalHistory = PersonalHistory()
+    var generalExamination: GeneralExamination = GeneralExamination()
+    var extraoralExamination: ExtraoralExamination = ExtraoralExamination()
+    var intraoralExamination: IntraoralExamination = IntraoralExamination()
+    var clinicalDiagnosis: String = ""
+    var differentialDiagnosis: String = ""
+    var investigationsAndResults: String = ""
+    var finalDiagnosis: String = ""
+    var treatmentPlan: String = ""
+    var prescriptions: [String] = []
     var studentExaminer: Student?
     var staffExaminer: Staff?
 }

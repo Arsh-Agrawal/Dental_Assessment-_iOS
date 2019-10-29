@@ -9,14 +9,12 @@
 import Foundation
 
 struct ExtraoralExamination{
-    var eyes: String
-    var ears: String
-    var nose: String
-    var facialSymmetry: String
-    var facialProfile: String
-    var lips: String
-    var tmj: String
-    var lymph: String
-    var mouth: String
+    var ent: String = ""
+    var facialSymmetry: String = ""
+    var facialProfile: String = ""
+    var lips: String = ""
+    var tmj: String = ""
+    var lymph: String = ""
+    var mouth: String = ""
 }
 

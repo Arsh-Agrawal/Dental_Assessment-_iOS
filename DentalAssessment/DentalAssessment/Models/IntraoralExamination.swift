@@ -9,11 +9,11 @@
 import Foundation
 
 struct IntraoralExamination{
-    var hygeneStatus: String
-    var halitosis: Bool         //bad breath
-    var stains: Bool            //stains on tooth
-    var calculus: Bool          //calcified tartar deposits
-    var softTissue: SoftTissueExamination
-    var hardTisseu: HardTissueExamination
-    var specificFindings: String
+    var hygieneStatus: String = ""
+    var halitosis: Bool = false         //bad breath
+    var stains: Bool = false            //stains on tooth
+    var calculus: Bool = false          //calcified tartar deposits
+    var softTissue: SoftTissueExamination = SoftTissueExamination()
+    var hardTisseu: HardTissueExamination = HardTissueExamination()
+    var specificFindings: String = ""
 }

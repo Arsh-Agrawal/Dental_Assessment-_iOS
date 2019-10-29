@@ -9,11 +9,11 @@
 import Foundation
 
 struct GingivaExamination{
-    var color: String
-    var contour: String
-    var position: String
-    var surfaceTexture: String
-    var consistency: String
-    var bleedingOnProbing: Bool
-    var periodontalPockets: String
+    var color: String = ""
+    var contour: String = ""
+    var position: String = ""
+    var surfaceTexture: String = ""
+    var consistency: String = ""
+    var bleedingOnProbing: Bool = false
+    var periodontalPockets: String = ""
 }

@@ -9,6 +9,6 @@
 import Foundation
 
 struct PersonalHistory{
-    var oralHygene: String
+    var oralHygene: String = ""
     //more stuff
 }
