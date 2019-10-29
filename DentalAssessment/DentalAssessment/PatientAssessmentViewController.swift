@@ -11,6 +11,9 @@ import UIKit
 import Eureka
 
 class CaseSheetViewController: FormViewController{
+    var teethStatus = ""
+    let teethStatuses = ["Decayed (D)", "Decayed with pulpal involvement (Pl)", "Root stump (RS)", "Missing (M)", "Filled (F)", "Mobility (Mo)", "Fracture (#)", "Prosthetic crown (C)", "Removable Partial Denture (RPD)", "Fixed partial denture (FPD)", "Attrition (AT)", "Abrasion (AB)", "Erosion (ER)"]
+    let teethStatusesShort = ["D", "Pl", "RS", "M", "F", "Mo", "#", "C", "RPD", "FPD", "AT", "AB", "ER"]
     override func viewDidLoad() {
         super.viewDidLoad()
         form +++ Section("Personal Details")
@@ -207,6 +210,20 @@ class CaseSheetViewController: FormViewController{
             }
         
             +++ Section("Hard tissue examination")
+            <<< PushRow<String>(){ row in
+                row.title = "Mark cells as"
+                row.options = self.teethStatuses
+            }.onChange({ pushrow in
+                guard let selection = pushrow.value else {return}
+                self.teethStatus = selection
+            })
+            <<< TeethViewRow() { row in
+                row.cell.cellPressed = { button in
+                    if let idx = self.teethStatuses.firstIndex(of: self.teethStatus) {
+                        button.setTitle(self.teethStatusesShort[idx], for: .normal)
+                    }
+                }
+            }
             +++ Section("Description of specific findings")
             <<< TextAreaRow() { row in
                 row.placeholder = "Description"
@@ -227,13 +244,57 @@ class CaseSheetViewController: FormViewController{
             <<< TextAreaRow() { row in
                 row.placeholder = "Description"
             }
-            +++ Section("Treatment plan")
-            <<< TextAreaRow() { row in
-                row.placeholder = "Description"
+            +++ MultivaluedSection(multivaluedOptions: [.Reorder, .Insert, .Delete],
+                                   header: "Treatment Plan", footer: "List out steps in treatment plan"){ section in
+                                    section.addButtonProvider = { sec in
+                                        return ButtonRow(){ row in
+                                            row.title = "Add treatment step"
+                                        }
+                                    }
+                                    section.multivaluedRowToInsertAt = { index in
+                                        return TextRow() { row in
+                                            row.placeholder = "Treatment step"
+                                        }
+                                    }
+                                    section <<< TextRow { row in
+                                        row.placeholder = "Treatment step"
+                                    }
             }
-            +++ Section("Drugs prescribed")
-            <<< TextAreaRow() { row in
-                row.placeholder = "Description"
+            +++ MultivaluedSection(multivaluedOptions: [.Reorder, .Insert, .Delete],
+                                   header: "Drugs prescribed", footer: "List prescribed drugs"){ section in
+                                    section.addButtonProvider = { sec in
+                                        return ButtonRow(){ row in
+                                            row.title = "Add drug step"
+                                        }
+                                    }
+                                    section.multivaluedRowToInsertAt = { index in
+                                        return TextRow() { row in
+                                            row.placeholder = "Drug name"
+                                        }
+                                    }
+                                    section <<< TextRow { row in
+                                        row.placeholder = "Drug name"
+                                    }
+            }
+            +++ MultivaluedSection(multivaluedOptions: [.Reorder, .Insert, .Delete],
+                                   header: "Priority", footer: "priority in which to visit other departments"){ section in
+                                    section.addButtonProvider = { sec in
+                                        return ButtonRow(){ row in
+                                            row.title = "Add department"
+                                        }
+                                    }
+                                    section.multivaluedRowToInsertAt = { index in
+                                        return PushRow<String>() { row in
+                                            row.options = [
+                                                "2. Conservative Dentistry",
+                                                "3. Periodontics",
+                                                "4. Oral & Maxillofacial Surgery",
+                                                "5. Prosthodontics",
+                                                "6. Pedodontics",
+                                                "7. Orthodontics"
+                                            ]
+                                        }
+                                    }
             }
             +++ Section("Examined by")
             <<< TextRow() { row in

@@ -15,6 +15,8 @@
 		3F2B085D23435AAB004B484C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F2B085B23435AAB004B484C /* Main.storyboard */; };
 		3F2B085F23435AAC004B484C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F2B085E23435AAC004B484C /* Assets.xcassets */; };
 		3F2B086223435AAC004B484C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F2B086023435AAC004B484C /* LaunchScreen.storyboard */; };
+		3F657A4F23683BFE00D15EAC /* TeethView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F657A4E23683BFE00D15EAC /* TeethView.xib */; };
+		3F657A512368433B00D15EAC /* TeethView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F657A502368433B00D15EAC /* TeethView.swift */; };
 		3FB3EA94234C810800CE1215 /* Patient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB3EA93234C810800CE1215 /* Patient.swift */; };
 		3FB3EA96234C8BD000CE1215 /* PatientAppointment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB3EA95234C8BD000CE1215 /* PatientAppointment.swift */; };
 		3FB3EA98234C902A00CE1215 /* CaseSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB3EA97234C902A00CE1215 /* CaseSheet.swift */; };
@@ -59,6 +61,8 @@
 		3F2B085E23435AAC004B484C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3F2B086123435AAC004B484C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3F2B086323435AAC004B484C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3F657A4E23683BFE00D15EAC /* TeethView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TeethView.xib; sourceTree = "<group>"; };
+		3F657A502368433B00D15EAC /* TeethView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeethView.swift; sourceTree = "<group>"; };
 		3FB3EA93234C810800CE1215 /* Patient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Patient.swift; sourceTree = "<group>"; };
 		3FB3EA95234C8BD000CE1215 /* PatientAppointment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientAppointment.swift; sourceTree = "<group>"; };
 		3FB3EA97234C902A00CE1215 /* CaseSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaseSheet.swift; sourceTree = "<group>"; };
@@ -143,6 +147,8 @@
 				E97EED80236430540091C03D /* IncomingPatientsViewController.swift */,
 				3F2B085923435AAB004B484C /* ViewController.swift */,
 				3F0725072361C68500699D59 /* PatientAssessmentViewController.swift */,
+				3F657A4E23683BFE00D15EAC /* TeethView.xib */,
+				3F657A502368433B00D15EAC /* TeethView.swift */,
 				E9836E27234CC7E4004F4523 /* WelcomeViewController.swift */,
 				E9836E29234CC83A004F4523 /* HospitalDashboardViewController.swift */,
 				E9836E2F2351D062004F4523 /* PatientAppointmentViewController.swift */,
@@ -277,6 +283,7 @@
 				3F2B085D23435AAB004B484C /* Main.storyboard in Resources */,
 				3FB85BF1235F1A1900EC06E7 /* PatientRegistration.storyboard in Resources */,
 				3FB85BF9235F201900EC06E7 /* CaseSheet.storyboard in Resources */,
+				3F657A4F23683BFE00D15EAC /* TeethView.xib in Resources */,
 				3FB85BE5235F0DF500EC06E7 /* Appointments.storyboard in Resources */,
 				3FB85BEF235F146800EC06E7 /* IncomingPatients.storyboard in Resources */,
 				3FB85BF7235F1F2F00EC06E7 /* ReferPatient.storyboard in Resources */,
@@ -357,6 +364,7 @@
 				3FB3EAA0234C9ECF00CE1215 /* IntraoralExamination.swift in Sources */,
 				3FB3EAAA234CA4A400CE1215 /* Doctor.swift in Sources */,
 				E9836E2A234CC83A004F4523 /* HospitalDashboardViewController.swift in Sources */,
+				3F657A512368433B00D15EAC /* TeethView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
