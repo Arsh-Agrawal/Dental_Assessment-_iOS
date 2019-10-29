@@ -25,7 +25,7 @@ struct CaseSheet{
     var differentialDiagnosis: String = ""
     var investigationsAndResults: String = ""
     var finalDiagnosis: String = ""
-    var treatmentPlan: String = ""
+    var treatmentPlan: [String] = []
     var prescriptions: [String] = []
     var studentExaminer: Student?
     var staffExaminer: Staff?

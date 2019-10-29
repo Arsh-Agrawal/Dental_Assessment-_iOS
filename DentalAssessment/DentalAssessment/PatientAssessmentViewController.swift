@@ -449,6 +449,8 @@ class CaseSheetViewController: FormViewController{
                     row.title = "Submit"
                 }.onCellSelection({ buttonCell, buttonRow in
                     print(self.caseSheet)
+                    print(self.form.allSections)
+                    print(self.form.allRows)
                 })
     }
 }

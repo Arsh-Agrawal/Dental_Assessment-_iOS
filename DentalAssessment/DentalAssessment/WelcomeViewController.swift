@@ -16,7 +16,7 @@ class WelcomeViewController: UIViewController {
     var dbHandle: DatabaseHandle?
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        takeUserToDashboard()
         // Do any additional setup after loading the view.
     }
 
@@ -29,7 +29,6 @@ class WelcomeViewController: UIViewController {
         guard let username = usernameField.text else {return}
         guard let password = passwordField.text else {return}
         let view = self;
-        //takeUserToDashboard()
         Auth.auth().signIn(withEmail: username, password: password){
             [weak self] authResult, error in
             guard self != nil else {return}
@@ -47,7 +46,9 @@ class WelcomeViewController: UIViewController {
     }
     func takeUserToDashboard(){
         ref = Database.database().reference()
+        print("here")
         guard let uid = defaults.string(forKey: "userid") else {return}
+        print("\n\n UID is: \(uid)\n\n")
         dbHandle = ref?.child("roles").child(uid).observe(.value, with: { (snapshot) in
             if !snapshot.exists()
             {
