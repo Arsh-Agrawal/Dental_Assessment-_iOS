@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct GingivaExamination{
+struct GingivaExamination: Codable{
     var color: String = ""
     var contour: String = ""
     var position: String = ""

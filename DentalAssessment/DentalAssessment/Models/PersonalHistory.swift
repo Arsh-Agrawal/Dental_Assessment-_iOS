@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct PersonalHistory{
+struct PersonalHistory: Codable{
     var oralHygene: String = ""
     //more stuff
 }

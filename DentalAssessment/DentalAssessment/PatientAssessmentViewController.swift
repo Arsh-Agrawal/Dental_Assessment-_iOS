@@ -342,8 +342,18 @@ class CaseSheetViewController: FormViewController{
                         self.caseSheet.intraoralExamination.calculus = false
                     }
                 })
+        let teethViewRow = TeethViewRow() { row in
+            row.cell.cellPressed = { button in
+                if let idx = self.teethStatuses.firstIndex(of: self.teethStatus) {
+                    button.setTitle(self.teethStatusesShort[idx], for: .normal)
+                }
+                else {
+                    button.setTitle("-", for: .normal)
+                }
+            }
+        }
         
-            +++ Section("Hard tissue examination")
+        form +++ Section("Hard tissue examination")
             <<< PushRow<String>(){ row in
                 row.title = "Mark cells as"
                 row.options = self.teethStatuses
@@ -354,16 +364,7 @@ class CaseSheetViewController: FormViewController{
                 }
                 self.teethStatus = selection
             })
-            <<< TeethViewRow() { row in
-                row.cell.cellPressed = { button in
-                    if let idx = self.teethStatuses.firstIndex(of: self.teethStatus) {
-                        button.setTitle(self.teethStatusesShort[idx], for: .normal)
-                    }
-                    else {
-                        button.setTitle("-", for: .normal)
-                    }
-                }
-            }
+            <<< teethViewRow
             +++ Section("Description of specific findings")
             <<< TextAreaRow() { row in
                 row.placeholder = "Description"
@@ -384,7 +385,7 @@ class CaseSheetViewController: FormViewController{
             <<< TextAreaRow() { row in
                 row.placeholder = "Description"
             }
-            +++ MultivaluedSection(multivaluedOptions: [.Reorder, .Insert, .Delete],
+        let treatmentsSection = MultivaluedSection(multivaluedOptions: [.Reorder, .Insert, .Delete],
                                    header: "Treatment Plan", footer: "List out steps in treatment plan"){ section in
                                     section.addButtonProvider = { sec in
                                         return ButtonRow(){ row in
@@ -400,7 +401,7 @@ class CaseSheetViewController: FormViewController{
                                         row.placeholder = "Treatment step"
                                     }
             }
-            +++ MultivaluedSection(multivaluedOptions: [.Reorder, .Insert, .Delete],
+        let drugsSection = MultivaluedSection(multivaluedOptions: [.Reorder, .Insert, .Delete],
                                    header: "Drugs prescribed", footer: "List prescribed drugs"){ section in
                                     section.addButtonProvider = { sec in
                                         return ButtonRow(){ row in
@@ -416,7 +417,7 @@ class CaseSheetViewController: FormViewController{
                                         row.placeholder = "Drug name"
                                     }
             }
-            +++ MultivaluedSection(multivaluedOptions: [.Reorder, .Insert, .Delete],
+        let deptVisitPriority = MultivaluedSection(multivaluedOptions: [.Reorder, .Insert, .Delete],
                                    header: "Priority", footer: "priority in which to visit other departments"){ section in
                                     section.addButtonProvider = { sec in
                                         return ButtonRow(){ row in
@@ -436,6 +437,9 @@ class CaseSheetViewController: FormViewController{
                                         }
                                     }
             }
+        form +++ treatmentsSection
+            +++ drugsSection
+            +++ deptVisitPriority
             +++ Section("Examined by")
             <<< TextRow() { row in
                 row.title = "Student"
@@ -448,9 +452,22 @@ class CaseSheetViewController: FormViewController{
             <<< ButtonRow() { row in
                     row.title = "Submit"
                 }.onCellSelection({ buttonCell, buttonRow in
-                    print(self.caseSheet)
-                    print(self.form.allSections)
-                    print(self.form.allRows)
+                    self.caseSheet.treatmentPlan = treatmentsSection.values() as? [String] ?? []
+                    self.caseSheet.prescriptions = drugsSection.values() as? [String] ?? []
+                    self.caseSheet.visitPriority = deptVisitPriority.values() as? [String] ?? []
+                    self.caseSheet.intraoralExamination.hardTissue = []
+                    guard let statusButtons = teethViewRow.cell.statusButtons else {return}
+                    for statusButton in statusButtons {
+                        if let titleLabel = statusButton.titleLabel { self.caseSheet.intraoralExamination.hardTissue.append(titleLabel.text ?? "-")
+                        }
+                    }
+                    do{
+                        let data = try JSONEncoder().encode(self.caseSheet)
+                        print(String(data: data, encoding: .utf8)!)
+                    }
+                    catch {
+                        print("error")
+                    }
                 })
     }
 }

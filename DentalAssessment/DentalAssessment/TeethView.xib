@@ -995,6 +995,60 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outletCollection property="statusButtons" destination="V2g-bZ-f6g" collectionClass="NSMutableArray" id="vz2-h0-INj"/>
+                <outletCollection property="statusButtons" destination="fCc-21-E2w" collectionClass="NSMutableArray" id="xaX-NP-G8q"/>
+                <outletCollection property="statusButtons" destination="gcA-l5-hwm" collectionClass="NSMutableArray" id="u1I-FY-5oI"/>
+                <outletCollection property="statusButtons" destination="yu3-mG-UPo" collectionClass="NSMutableArray" id="8CQ-Xf-sXk"/>
+                <outletCollection property="statusButtons" destination="y2F-7Y-Ks4" collectionClass="NSMutableArray" id="8mo-Zd-s58"/>
+                <outletCollection property="statusButtons" destination="FtF-tR-iUn" collectionClass="NSMutableArray" id="qc8-10-lCQ"/>
+                <outletCollection property="statusButtons" destination="VgU-6d-sPv" collectionClass="NSMutableArray" id="i0N-gw-mXc"/>
+                <outletCollection property="statusButtons" destination="z7U-UD-c0v" collectionClass="NSMutableArray" id="0HC-F7-wEC"/>
+                <outletCollection property="statusButtons" destination="XZo-dC-WbD" collectionClass="NSMutableArray" id="Xyw-6P-l0Q"/>
+                <outletCollection property="statusButtons" destination="HJC-Nr-P7A" collectionClass="NSMutableArray" id="Ydg-e2-JXb"/>
+                <outletCollection property="statusButtons" destination="2jg-ap-QCl" collectionClass="NSMutableArray" id="Uoj-8G-yOd"/>
+                <outletCollection property="statusButtons" destination="ebl-p9-E3b" collectionClass="NSMutableArray" id="srS-wA-LxZ"/>
+                <outletCollection property="statusButtons" destination="nf9-Hg-P5z" collectionClass="NSMutableArray" id="OXE-wJ-Hla"/>
+                <outletCollection property="statusButtons" destination="J6e-wz-eyJ" collectionClass="NSMutableArray" id="Ngb-vm-tG1"/>
+                <outletCollection property="statusButtons" destination="Fdk-xr-QzK" collectionClass="NSMutableArray" id="ZQK-Gw-iEk"/>
+                <outletCollection property="statusButtons" destination="onF-Qb-ExN" collectionClass="NSMutableArray" id="m1U-AJ-Zgl"/>
+                <outletCollection property="statusButtons" destination="0eM-cc-NRo" collectionClass="NSMutableArray" id="GXb-Nd-Vmd"/>
+                <outletCollection property="statusButtons" destination="KNS-pP-qdS" collectionClass="NSMutableArray" id="CcJ-ts-pxv"/>
+                <outletCollection property="statusButtons" destination="ef6-Zo-von" collectionClass="NSMutableArray" id="0Ev-mH-cVx"/>
+                <outletCollection property="statusButtons" destination="tS8-6T-him" collectionClass="NSMutableArray" id="Xxq-i7-oSL"/>
+                <outletCollection property="statusButtons" destination="OZ6-Gw-nGF" collectionClass="NSMutableArray" id="H48-cG-E2s"/>
+                <outletCollection property="statusButtons" destination="A0l-9z-xWn" collectionClass="NSMutableArray" id="EXy-wg-gTe"/>
+                <outletCollection property="statusButtons" destination="kkD-7l-CZ4" collectionClass="NSMutableArray" id="X36-GJ-Qxb"/>
+                <outletCollection property="statusButtons" destination="9dD-gf-gpv" collectionClass="NSMutableArray" id="da3-Ov-9gG"/>
+                <outletCollection property="statusButtons" destination="Hbm-ej-N32" collectionClass="NSMutableArray" id="n1c-j3-YaJ"/>
+                <outletCollection property="statusButtons" destination="QzU-Fu-fBT" collectionClass="NSMutableArray" id="CDi-GR-Vlq"/>
+                <outletCollection property="statusButtons" destination="PiB-kZ-nxW" collectionClass="NSMutableArray" id="Iw5-bH-4eZ"/>
+                <outletCollection property="statusButtons" destination="seq-RB-Oxz" collectionClass="NSMutableArray" id="9ho-rL-iVO"/>
+                <outletCollection property="statusButtons" destination="yuW-ov-bZs" collectionClass="NSMutableArray" id="uii-Ro-bSd"/>
+                <outletCollection property="statusButtons" destination="PPJ-Ld-bW2" collectionClass="NSMutableArray" id="dXG-RA-iYR"/>
+                <outletCollection property="statusButtons" destination="PZV-gA-Hsm" collectionClass="NSMutableArray" id="11p-ud-aCB"/>
+                <outletCollection property="statusButtons" destination="ZDn-xv-t0H" collectionClass="NSMutableArray" id="Bba-VS-we1"/>
+                <outletCollection property="statusButtons" destination="3Li-bH-mup" collectionClass="NSMutableArray" id="uV0-gY-SUs"/>
+                <outletCollection property="statusButtons" destination="LiI-yY-2E8" collectionClass="NSMutableArray" id="5MG-H4-Crs"/>
+                <outletCollection property="statusButtons" destination="h0M-ci-BgJ" collectionClass="NSMutableArray" id="EUq-qh-ypI"/>
+                <outletCollection property="statusButtons" destination="i5H-kC-FpA" collectionClass="NSMutableArray" id="nB3-Ce-FAQ"/>
+                <outletCollection property="statusButtons" destination="cAz-Sq-spU" collectionClass="NSMutableArray" id="sMq-nf-lk3"/>
+                <outletCollection property="statusButtons" destination="GAa-XF-xwi" collectionClass="NSMutableArray" id="9Ax-NY-Dec"/>
+                <outletCollection property="statusButtons" destination="CiZ-KD-Vim" collectionClass="NSMutableArray" id="toq-69-4dj"/>
+                <outletCollection property="statusButtons" destination="qO8-ml-UDp" collectionClass="NSMutableArray" id="sby-Eb-tXb"/>
+                <outletCollection property="statusButtons" destination="IqU-OO-SX7" collectionClass="NSMutableArray" id="vFw-I4-GgO"/>
+                <outletCollection property="statusButtons" destination="09j-Za-0uR" collectionClass="NSMutableArray" id="NCa-Bb-NYx"/>
+                <outletCollection property="statusButtons" destination="975-PE-OOZ" collectionClass="NSMutableArray" id="xER-sR-vKX"/>
+                <outletCollection property="statusButtons" destination="B3L-KT-cfc" collectionClass="NSMutableArray" id="Hfr-RM-WE1"/>
+                <outletCollection property="statusButtons" destination="zuS-xp-8eF" collectionClass="NSMutableArray" id="fkO-kA-e9g"/>
+                <outletCollection property="statusButtons" destination="pko-GS-KM3" collectionClass="NSMutableArray" id="ZGT-uw-239"/>
+                <outletCollection property="statusButtons" destination="S2m-ld-diJ" collectionClass="NSMutableArray" id="8yR-nW-FpI"/>
+                <outletCollection property="statusButtons" destination="Her-De-mST" collectionClass="NSMutableArray" id="hOq-uR-uDH"/>
+                <outletCollection property="statusButtons" destination="mNz-Tz-h9j" collectionClass="NSMutableArray" id="xZW-gm-uxM"/>
+                <outletCollection property="statusButtons" destination="0d0-qU-rlY" collectionClass="NSMutableArray" id="U6L-r8-kMF"/>
+                <outletCollection property="statusButtons" destination="fF2-cO-6so" collectionClass="NSMutableArray" id="G2U-Nk-zon"/>
+                <outletCollection property="statusButtons" destination="Zgt-Ob-ipg" collectionClass="NSMutableArray" id="H9A-VZ-23l"/>
+            </connections>
             <point key="canvasLocation" x="119.56521739130436" y="174.77678571428569"/>
         </view>
     </objects>

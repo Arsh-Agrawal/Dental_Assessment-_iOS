@@ -8,17 +8,17 @@
 
 import Foundation
 
-class Patient: DocumentSerializable {
-    var id: String
-    var name: String
-    var age: Int
-    var sex: Int
-    var phone: String
-    var address: String
+struct Patient: Codable {
+    var id: String = ""
+    var name: String = ""
+    var age: Int = 0
+    var sex: Int = 0
+    var phone: String = ""
+    var address: String = ""
     var maritalStatus: Bool?
     var occupation: String?
     
-    init(id: String, name: String, age: Int, sex: Int, phone: String, address: String, maritalStatus: Bool?, occupation: String?) {
+    /*init(id: String, name: String, age: Int, sex: Int, phone: String, address: String, maritalStatus: Bool?, occupation: String?) {
         self.id = id
         self.name = name
         self.age = age
@@ -40,4 +40,5 @@ class Patient: DocumentSerializable {
         
         self.init(id: id, name: name, age: age, sex: sex, phone: phone, address: address, maritalStatus: dict["maritalStatus"] as? Bool, occupation: dict["occupation"] as? String)
     }
+    */
 }

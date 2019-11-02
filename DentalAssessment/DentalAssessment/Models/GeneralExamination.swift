@@ -7,7 +7,7 @@
 //
 
 import Foundation
-struct GeneralExamination{
+struct GeneralExamination: Codable{
     var build: String = ""
     var gait: String = ""
     var vitals: String = ""

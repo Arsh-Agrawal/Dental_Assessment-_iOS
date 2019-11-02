@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct ExtraoralExamination{
+struct ExtraoralExamination: Codable{
     var ent: String = ""
     var facialSymmetry: String = ""
     var facialProfile: String = ""

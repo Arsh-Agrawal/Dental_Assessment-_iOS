@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct SoftTissueExamination{
+struct SoftTissueExamination: Codable{
     var labialMucosa: String = ""
     var buccalMucosa: String = ""
     var palate: String = ""

@@ -26,6 +26,8 @@ public class TeethView: Cell<NSDictionary>, CellType {
         // Drawing code
     }
     */
+
+    @IBOutlet var statusButtons: [UIButton]!
     @IBAction func onCellPressed(_ sender: UIButton) {
         self.cellPressed(sender)
     }

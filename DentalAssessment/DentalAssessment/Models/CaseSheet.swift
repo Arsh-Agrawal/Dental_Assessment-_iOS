@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct CaseSheet{
+struct CaseSheet: Codable{
     var id: String = ""
     var patient: Patient = Patient()
     var hospitalNum: Int = 0
@@ -27,6 +27,7 @@ struct CaseSheet{
     var finalDiagnosis: String = ""
     var treatmentPlan: [String] = []
     var prescriptions: [String] = []
+    var visitPriority: [String] = []
     var studentExaminer: Student?
     var staffExaminer: Staff?
 }

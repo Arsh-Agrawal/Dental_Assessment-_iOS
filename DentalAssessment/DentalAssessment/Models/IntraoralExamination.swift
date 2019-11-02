@@ -8,12 +8,13 @@
 
 import Foundation
 
-struct IntraoralExamination{
+struct IntraoralExamination: Codable{
     var hygieneStatus: String = ""
     var halitosis: Bool = false         //bad breath
     var stains: Bool = false            //stains on tooth
     var calculus: Bool = false          //calcified tartar deposits
     var softTissue: SoftTissueExamination = SoftTissueExamination()
-    var hardTisseu: HardTissueExamination = HardTissueExamination()
+    //var hardTissue: HardTissueExamination = HardTissueExamination()
+    var hardTissue: [String] = []
     var specificFindings: String = ""
 }
