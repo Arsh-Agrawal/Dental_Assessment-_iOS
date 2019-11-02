@@ -13,4 +13,5 @@ target 'DentalAssessment' do
   pod 'Firebase/Analytics'
   pod 'Firebase/Auth'
   pod 'Eureka', '~> 5.0.0'
+  pod 'SuggestionRow'
 end

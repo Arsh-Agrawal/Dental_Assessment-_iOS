@@ -11,8 +11,8 @@ import Foundation
 struct Patient: Codable {
     var id: String = ""
     var name: String = ""
-    var age: Int = 0
-    var sex: Int = 0
+    var age: Int = -1
+    var sex: Int = -1
     var phone: String = ""
     var address: String = ""
     var maritalStatus: Bool?

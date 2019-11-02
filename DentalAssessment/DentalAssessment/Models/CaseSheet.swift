@@ -21,6 +21,7 @@ struct CaseSheet: Codable{
     var generalExamination: GeneralExamination = GeneralExamination()
     var extraoralExamination: ExtraoralExamination = ExtraoralExamination()
     var intraoralExamination: IntraoralExamination = IntraoralExamination()
+    var specificFindings: String = ""
     var clinicalDiagnosis: String = ""
     var differentialDiagnosis: String = ""
     var investigationsAndResults: String = ""

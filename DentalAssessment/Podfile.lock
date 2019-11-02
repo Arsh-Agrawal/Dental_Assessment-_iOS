@@ -83,6 +83,8 @@ PODS:
     - nanopb/encode (= 0.3.901)
   - nanopb/decode (0.3.901)
   - nanopb/encode (0.3.901)
+  - SuggestionRow (3.0.0):
+    - Eureka (~> 5.0)
 
 DEPENDENCIES:
   - Eureka (~> 5.0.0)
@@ -90,10 +92,12 @@ DEPENDENCIES:
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Database
+  - SuggestionRow
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - Eureka
+    - SuggestionRow
   trunk:
     - Firebase
     - FirebaseAnalytics
@@ -130,7 +134,8 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: 61bb0f61a4cb560030f1222021178008a5727a23
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
+  SuggestionRow: 56423e7f52db720feed251eeb64caed444b4207b
 
-PODFILE CHECKSUM: 6a50541cd63ae64e3d0ee4b712d1977e8cab1b55
+PODFILE CHECKSUM: 7cfb6199db0be3ab45a712175d935f1b721a4552
 
 COCOAPODS: 1.8.3

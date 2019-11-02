@@ -50,8 +50,11 @@ class IncomingPatientsViewController: UIViewController,UITableViewDelegate,UITab
         return cell!
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if(indexPath.row > 0){
-            performSegue(withIdentifier: "caseSheetSegue", sender: nil)
+        if(indexPath.row >= 0){
+            let pavc = UIStoryboard.init(name: "PatientAssessment", bundle: Bundle.main).instantiateInitialViewController() as? CaseSheetViewController
+            pavc?.allowEdits = false
+            self.navigationController?.pushViewController(pavc!, animated: true)
+            //performSegue(withIdentifier: "caseSheetSegue", sender: nil)
         }
     }
 
