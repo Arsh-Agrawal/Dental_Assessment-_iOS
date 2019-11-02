@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Lmj-Zx-cve">
-    <device id="retina4_0" orientation="portrait">
+    <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -19,34 +19,23 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="0xR-bE-kup">
-                                <rect key="frame" x="129" y="226" width="156" height="90"/>
+                                <rect key="frame" x="129" y="226" width="156" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="etd-C4-ZV5">
-                                        <rect key="frame" x="0.0" y="0.0" width="156" height="30"/>
-                                        <state key="normal" title="Start New Assessment"/>
-                                        <connections>
-                                            <segue destination="QrU-m8-tLK" kind="show" id="lex-h2-AcN"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o6f-2p-Jea">
-                                        <rect key="frame" x="0.0" y="30" width="156" height="30"/>
-                                        <state key="normal" title="Forward Patient"/>
-                                        <connections>
-                                            <segue destination="nv3-Ay-84M" kind="show" id="M0L-Wm-2P1"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ebS-o5-l7w">
-                                        <rect key="frame" x="0.0" y="60" width="156" height="30"/>
-                                        <state key="normal" title="View Case Sheet"/>
-                                        <connections>
-                                            <segue destination="rqk-dO-z1d" kind="show" id="iZq-kz-YIX"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="etd-C4-ZV5">
+                                <rect key="frame" x="61" y="424" width="292" height="48"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <state key="normal" title="Start New Assessment"/>
+                                <connections>
+                                    <segue destination="QrU-m8-tLK" kind="show" id="lex-h2-AcN"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="etd-C4-ZV5" firstAttribute="centerY" secondItem="B0V-Oj-FNY" secondAttribute="centerY" id="FDH-zq-gRz"/>
+                            <constraint firstItem="etd-C4-ZV5" firstAttribute="centerX" secondItem="B0V-Oj-FNY" secondAttribute="centerX" id="i4d-gW-N9b"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="rl8-Zi-Dxi"/>
                     </view>
                     <navigationItem key="navigationItem" title="Patient Assessment" id="bxd-3z-7jT"/>
@@ -61,23 +50,7 @@
                 <viewControllerPlaceholder storyboardName="PatientAssessment" id="QrU-m8-tLK" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VTq-su-MLK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="350" y="1889.7321428571427"/>
-        </scene>
-        <!--CaseSheet-->
-        <scene sceneID="Opt-PB-yGz">
-            <objects>
-                <viewControllerPlaceholder storyboardName="CaseSheet" id="rqk-dO-z1d" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Qkj-LU-2Qn" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="313.04347826086956" y="1984.8214285714284"/>
-        </scene>
-        <!--ReferPatient-->
-        <scene sceneID="kIY-jD-qxD">
-            <objects>
-                <viewControllerPlaceholder storyboardName="ReferPatient" id="nv3-Ay-84M" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="VUz-vT-mTQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="318.84057971014494" y="2076.5625"/>
+            <point key="canvasLocation" x="375" y="1985"/>
         </scene>
     </scenes>
 </document>

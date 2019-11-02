@@ -17,6 +17,8 @@ class CaseSheetViewController: FormViewController{
     var caseSheet = CaseSheet()
     override func viewDidLoad() {
         super.viewDidLoad()
+        //let editButton = UIBarButtonItem(title: "Edit", style: .plain, target: self, action: #selector())
+        //self.navigationItem.rightBarButtonItem = editButton
         form +++ Section("Personal Details")
             <<< TextRow() { row in
                 row.title = "Name"
@@ -464,6 +466,7 @@ class CaseSheetViewController: FormViewController{
                     do{
                         let data = try JSONEncoder().encode(self.caseSheet)
                         print(String(data: data, encoding: .utf8)!)
+                        self.navigationController?.popViewController(animated: true)
                     }
                     catch {
                         print("error")

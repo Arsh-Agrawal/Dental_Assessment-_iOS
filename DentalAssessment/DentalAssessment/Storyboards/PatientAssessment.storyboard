@@ -27,9 +27,6 @@
                                 <rect key="frame" x="90" y="483" width="232" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Refer patient to some department"/>
-                                <connections>
-                                    <segue destination="NDp-bp-hZs" kind="show" id="ftZ-PO-xwP"/>
-                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Patient ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wTy-rF-gzw">
                                 <rect key="frame" x="157" y="438" width="74" height="21"/>
@@ -45,15 +42,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="siG-AU-zqm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-274" y="1337"/>
-        </scene>
-        <!--ReferPatient-->
-        <scene sceneID="BS5-cg-FcC">
-            <objects>
-                <viewControllerPlaceholder storyboardName="ReferPatient" id="NDp-bp-hZs" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5Bi-4J-04E" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="383" y="1337"/>
+            <point key="canvasLocation" x="-325" y="1260"/>
         </scene>
     </scenes>
 </document>
