@@ -40,6 +40,7 @@ class WelcomeViewController: UIViewController {
                 view.incorrectDetailsLabel.isHidden = false
                 return
             }
+            view.incorrectDetailsLabel.isHidden = true
             print("No errors")
             guard let authResult = authResult else {return}
             view.defaults.set(authResult.user.uid, forKey: "userid")
