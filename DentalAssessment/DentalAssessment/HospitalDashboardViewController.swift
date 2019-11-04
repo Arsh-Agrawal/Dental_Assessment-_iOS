@@ -9,8 +9,12 @@
 import UIKit
 
 class HospitalDashboardViewController: UITableViewController {
+    var defaults = UserDefaults.standard
     let cellIdentifier = "departmentCellIdentifier"
     override func viewDidLoad() {
+        let logoutButton = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(logoutPressed(_:)))
+        self.navigationItem.rightBarButtonItem = logoutButton
+        self.navigationController?.navigationBar.prefersLargeTitles = true
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
@@ -21,6 +25,10 @@ class HospitalDashboardViewController: UITableViewController {
         }
     }
     
+    @objc func logoutPressed(_ sender: Any?){
+        self.defaults.removeObject(forKey: "userid")
+        performSegue(withIdentifier: "logoutSegue", sender: nil)
+    }
     /*
     // MARK: - Navigation
 

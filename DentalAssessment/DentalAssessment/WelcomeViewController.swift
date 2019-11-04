@@ -17,7 +17,6 @@ class WelcomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         takeUserToDashboard()
-        // Do any additional setup after loading the view.
     }
 
     @IBOutlet var usernameField: UITextField!
@@ -49,7 +48,8 @@ class WelcomeViewController: UIViewController {
         print("here")
         guard let uid = defaults.string(forKey: "userid") else {return}
         print("\n\n UID is: \(uid)\n\n")
-        dbHandle = ref?.child("roles").child(uid).observe(.value, with: { (snapshot) in
+        self.performSegue(withIdentifier: "doctorLoginSegue", sender: nil)
+        /*dbHandle = ref?.child("roles").child(uid).observe(.value, with: { (snapshot) in
             if !snapshot.exists()
             {
                 print("snapshot returned but doesn't exist")
@@ -65,6 +65,7 @@ class WelcomeViewController: UIViewController {
                 }
             }
         })
+         */
     }
     /*
     // MARK: - Navigation
