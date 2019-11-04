@@ -9,6 +9,7 @@
 import UIKit
 import FirebaseAuth
 import Firebase
+var vSpinner: UIView?
 
 class WelcomeViewController: UIViewController {
     var defaults = UserDefaults.standard
@@ -25,11 +26,14 @@ class WelcomeViewController: UIViewController {
     
 
     @IBAction func loginPressed(_ sender: Any) {
+        
         guard let username = usernameField.text else {return}
         guard let password = passwordField.text else {return}
         let view = self;
+        self.showSpinner(onView: self.view)
         Auth.auth().signIn(withEmail: username, password: password){
             [weak self] authResult, error in
+            view.removeSpinner()
             guard self != nil else {return}
             if let error = error {
                 print(error)
@@ -77,4 +81,28 @@ class WelcomeViewController: UIViewController {
     }
     */
 
+}
+
+extension UIViewController {
+    func showSpinner(onView : UIView) {
+        let spinnerView = UIView.init(frame: onView.bounds)
+        spinnerView.backgroundColor = UIColor.init(red: 0.5, green: 0.5, blue: 0.5, alpha: 0.5)
+        let ai = UIActivityIndicatorView.init(style: .whiteLarge)
+        ai.startAnimating()
+        ai.center = spinnerView.center
+        
+        DispatchQueue.main.async {
+            spinnerView.addSubview(ai)
+            onView.addSubview(spinnerView)
+        }
+        
+        vSpinner = spinnerView
+    }
+    
+    func removeSpinner() {
+        DispatchQueue.main.async {
+            vSpinner?.removeFromSuperview()
+            vSpinner = nil
+        }
+    }
 }
