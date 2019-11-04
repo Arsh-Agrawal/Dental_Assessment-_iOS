@@ -27,7 +27,7 @@ class HospitalDashboardViewController: UITableViewController {
     
     @objc func logoutPressed(_ sender: Any?){
         self.defaults.removeObject(forKey: "userid")
-        performSegue(withIdentifier: "logoutSegue", sender: nil)
+        dismiss(animated: true, completion: nil)
     }
     /*
     // MARK: - Navigation
