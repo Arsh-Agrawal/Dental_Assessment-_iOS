@@ -21,20 +21,19 @@ class CaseSheetViewController: FormViewController{
     var deptVisitPriority: MultivaluedSection = MultivaluedSection()
     var teethViewRow = TeethViewRow()
     var caseSheet = CaseSheet()
-    //let editButton = UIBarButtonItem(title: "Edit", style: .plain, target: self, action: #selector(editButtonPushed))
-    let editButton = UIButton(type: .system)
     let editSwitch = UISwitch()
     override func viewDidLoad() {
         let editLabel = UILabel()
         editLabel.text = "Edit"
         editSwitch.addTarget(self, action: #selector(editButtonPushed(_:)), for: .touchUpInside)
         editSwitch.isOn = allowEdits
-        //self.navigationItem.rightBarButtonItems?.append(UIBarButtonItem(customView: editLabel))
         self.navigationItem.rightBarButtonItems = [UIBarButtonItem(customView: editSwitch), UIBarButtonItem(customView: editLabel)]
         super.viewDidLoad()
         print("here")
         print(self.allowEdits)
         populateForm()
+        self.navigationItem.largeTitleDisplayMode = .never
+        
         updateEditMode()
     }
 
