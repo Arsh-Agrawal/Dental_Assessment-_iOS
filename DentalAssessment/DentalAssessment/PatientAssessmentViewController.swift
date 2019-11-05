@@ -10,8 +10,13 @@ import Foundation
 import UIKit
 import Eureka
 import SuggestionRow
+import Firebase
 
 class CaseSheetViewController: FormViewController{
+    
+    var ref : DatabaseReference?
+    var dbHandle : DatabaseHandle?
+    
     var allowEdits = true
     var teethStatus = ""
     let teethStatuses = ["Decayed (D)", "Decayed with pulpal involvement (Pl)", "Root stump (RS)", "Missing (M)", "Filled (F)", "Mobility (Mo)", "Fracture (#)", "Prosthetic crown (C)", "Removable Partial Denture (RPD)", "Fixed partial denture (FPD)", "Attrition (AT)", "Abrasion (AB)", "Erosion (ER)"]
@@ -23,6 +28,18 @@ class CaseSheetViewController: FormViewController{
     var caseSheet = CaseSheet()
     let editSwitch = UISwitch()
     override func viewDidLoad() {
+        
+        //autofill with db
+        
+        ref = Database.database().reference()
+        
+        dbHandle = ref?.child("Patients").child("patient2").observe(.childAdded, with: { (snapshot) in
+
+            let value = snapshot.value as? NSDictionary
+            
+            self.caseSheet.patient.name = value?["name"] as? String ?? ""
+        })
+        
         let editLabel = UILabel()
         editLabel.text = "Edit"
         editSwitch.addTarget(self, action: #selector(editButtonPushed(_:)), for: .touchUpInside)
@@ -38,6 +55,9 @@ class CaseSheetViewController: FormViewController{
     }
 
     func populateForm(){
+        
+        ref = Database.database().reference()
+        
         form.removeAll()
         form +++ Section("Personal Details")
             <<< TextRow() { row in
@@ -47,7 +67,13 @@ class CaseSheetViewController: FormViewController{
                 //row.disabled = Condition(booleanLiteral: self.allowEdits)
                 }.onChange({ textrow in
                     guard let name = textrow.value else {return}
+                    
+                    let updated_val : [String:String] = ["name":name]
+                    self.ref?.child("Patients").child("patient2").updateChildValues(updated_val)
+                    
+                    
                     self.caseSheet.patient.name = name
+                    
                 })
             <<< TextRow() { row in
                 row.title = "Age"
@@ -57,6 +83,10 @@ class CaseSheetViewController: FormViewController{
                 }
                 }.onChange({ textrow in
                     guard let age = Int(textrow.value ?? "") else {return}
+                    
+                    let updated_val : [String:Int] = ["age":age]
+                    self.ref?.child("Patients").child("patient2").updateChildValues(updated_val)
+                    
                     self.caseSheet.patient.age = age
                 })
             <<< SegmentedRow<String>() { row in
@@ -70,12 +100,18 @@ class CaseSheetViewController: FormViewController{
                     cell.segmentedControl.widthAnchor.constraint(equalTo: titleLabel.widthAnchor).isActive = true
                 }.onChange({ segmentedRow in
                     guard let sex = segmentedRow.value else {return}
+                    
+                    
+                    
                     switch(sex){
                     case "Male":
                         self.caseSheet.patient.sex = 0
                     default:
                         self.caseSheet.patient.sex = 1
                     }
+                    
+                    let updated_val : [String:Int] = ["sex":self.caseSheet.patient.sex]
+                    self.ref?.child("Patients").child("patient2").updateChildValues(updated_val)
                 })
             <<< PhoneRow() { row in
                 row.title = "Phone"
@@ -83,6 +119,8 @@ class CaseSheetViewController: FormViewController{
                 row.value = self.caseSheet.patient.phone
                 }.onChange({ textrow in
                     guard let phone = textrow.value else {return}
+                    let updated_val : [String:String] = ["phone":phone]
+                    self.ref?.child("Patients").child("patient2").updateChildValues(updated_val)
                     self.caseSheet.patient.phone = phone
                 })
             <<< LabelRow {row in
@@ -94,6 +132,8 @@ class CaseSheetViewController: FormViewController{
                 row.value = self.caseSheet.patient.address
                 }.onChange({ textrow in
                     guard let addr = textrow.value else {return}
+                    let updated_val : [String:String] = ["address":addr]
+                    self.ref?.child("Patients").child("patient2").updateChildValues(updated_val)
                     self.caseSheet.patient.address = addr
                 })
             

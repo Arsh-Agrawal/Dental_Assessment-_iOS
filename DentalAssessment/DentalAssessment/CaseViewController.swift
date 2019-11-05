@@ -9,16 +9,32 @@
 import UIKit
 import Foundation
 import Eureka
+import Firebase
 
 class CaseViewController: FormViewController {
+    
+    var ref : DatabaseReference?
+    var dbHandle : DatabaseHandle?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        ref = Database.database().reference()
+        let patient_id = "123" //instead of patient2 and value will be retrieved
+        
         form +++ Section("Personal Details")
             <<< LabelRow() { row in
                 row.title = "Name"
-            }
+                }.onChange({ (row) in
+                    //add data to the db
+                    print("on change called")
+                    if let name = row.value {
+                        print("inside if let")
+                        let updated_val : [String:String] = ["name":name]
+                        self.ref?.child("Patients").child("patient2").setValue(updated_val)
+                    }
+                    
+                })
             <<< LabelRow() { row in
                 row.title = "Age"
             }
