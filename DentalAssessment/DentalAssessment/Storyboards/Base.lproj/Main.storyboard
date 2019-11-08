@@ -118,7 +118,7 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7PL-Jg-r8S">
                                                 <rect key="frame" x="0.0" y="0.0" width="682" height="30"/>
-                                                <state key="normal" title="Login"/>
+                                                <state key="normal" title="Sign in"/>
                                                 <connections>
                                                     <action selector="loginPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9Ih-5t-ma7"/>
                                                 </connections>
@@ -130,8 +130,8 @@
                                     <constraint firstItem="1JX-LX-JCD" firstAttribute="width" secondItem="YyW-Qx-oMi" secondAttribute="width" id="1tL-Ar-83C"/>
                                 </constraints>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uKM-aw-LTc">
-                                <rect key="frame" x="316" y="292" width="80.5" height="36"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign in" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uKM-aw-LTc">
+                                <rect key="frame" x="307" y="292" width="98.5" height="36"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>

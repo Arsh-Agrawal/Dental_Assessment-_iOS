@@ -12,7 +12,7 @@ class HospitalDashboardViewController: UITableViewController {
     var defaults = UserDefaults.standard
     let cellIdentifier = "departmentCellIdentifier"
     override func viewDidLoad() {
-        let logoutButton = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(logoutPressed(_:)))
+        let logoutButton = UIBarButtonItem(title: "Sign out", style: .plain, target: self, action: #selector(logoutPressed(_:)))
         self.navigationItem.rightBarButtonItem = logoutButton
         self.navigationController?.navigationBar.prefersLargeTitles = true
         super.viewDidLoad()

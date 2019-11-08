@@ -17,6 +17,11 @@ class WelcomeViewController: UIViewController {
     var dbHandle: DatabaseHandle?
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.showSpinner(onView: self.view)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.removeSpinner()
         takeUserToDashboard()
     }
 
