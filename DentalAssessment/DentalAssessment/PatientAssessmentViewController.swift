@@ -57,6 +57,7 @@ class CaseSheetViewController: FormViewController{
         ref = Database.database().reference()
         
         form.removeAll()
+        // MARK: - Personal Details
         form +++ Section("Personal Details")
             <<< TextRow() { row in
                 row.title = "Name"
@@ -121,7 +122,7 @@ class CaseSheetViewController: FormViewController{
                     self.patient.address = addr
                 })
             
-            
+            // MARK: - Assessment details
             +++ Section("Assessment")
             <<< TextRow() { row in
                 row.title = "Hospital Number"
@@ -183,7 +184,7 @@ class CaseSheetViewController: FormViewController{
                     self.caseSheet.dentalHistory = history
                 })
             
-            
+            // MARK: - General Examination
             +++ Section("General Examination")
             <<< TextRow() { row in
                 row.title = "Build and gait"
@@ -210,7 +211,7 @@ class CaseSheetViewController: FormViewController{
                     self.caseSheet.generalExamination.findings = findings
                 })
             
-            
+            // MARK: - Extraoral Examination
             +++ Section("Extraoral Examination")
             <<< TextRow() { row in
                 row.title = "Eyes, ears and nose"
@@ -269,7 +270,7 @@ class CaseSheetViewController: FormViewController{
                     self.caseSheet.extraoralExamination.mouth = mouth
                 })
             
-            
+            // MARK: - Intraoral Examination
             +++ Section("Intraoral examination")
             +++ Section("Soft tissue examination")
             <<< TextRow() { row in
@@ -451,6 +452,7 @@ class CaseSheetViewController: FormViewController{
                         self.caseSheet.intraoralExamination.calculus = false
                     }
                 })
+        // MARK: - Teeth status view
         teethViewRow = TeethViewRow() { row in
             row.cell.cellPressed = { button in
                 if let idx = self.teethStatuses.firstIndex(of: self.teethStatus) {
@@ -466,7 +468,7 @@ class CaseSheetViewController: FormViewController{
                 }
             }
         }
-        
+        // MARK: - Hard tissue examination
         form +++ Section("Hard tissue examination")
             <<< PushRow<String>(){ row in
                 row.title = "Mark cells as"
