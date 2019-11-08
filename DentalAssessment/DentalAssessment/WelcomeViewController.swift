@@ -41,16 +41,13 @@ class WelcomeViewController: UIViewController {
                 return
             }
             view.incorrectDetailsLabel.isHidden = true
-            print("No errors")
             guard let authResult = authResult else {return}
             view.defaults.set(authResult.user.uid, forKey: "userid")
-            print("Valid result")
             view.takeUserToDashboard()
         }
     }
     func takeUserToDashboard(){
         ref = Database.database().reference()
-        print("here")
         guard let uid = defaults.string(forKey: "userid") else {return}
         print("\n\n UID is: \(uid)\n\n")
         self.performSegue(withIdentifier: "doctorLoginSegue", sender: nil)

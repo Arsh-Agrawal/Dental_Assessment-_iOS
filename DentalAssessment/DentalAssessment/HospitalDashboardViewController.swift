@@ -31,8 +31,18 @@ class HospitalDashboardViewController: UITableViewController {
     }
     
     @objc func logoutPressed(_ sender: Any?){
-        self.defaults.removeObject(forKey: "userid")
-        dismiss(animated: true, completion: nil)
+        let alert = UIAlertController(title: "Sign out?", message: "You can always access the app by signing back in", preferredStyle: UIAlertController.Style.alert)
+
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default, handler: { _ in
+            //Cancel Action
+        }))
+        alert.addAction(UIAlertAction(title: "Sign out",
+                                      style: UIAlertAction.Style.default,
+                                      handler: {(_: UIAlertAction!) in
+                                        self.defaults.removeObject(forKey: "userid")
+                                        self.dismiss(animated: true, completion: nil)
+        }))
+        self.present(alert, animated: true, completion: nil)
     }
     /*
     

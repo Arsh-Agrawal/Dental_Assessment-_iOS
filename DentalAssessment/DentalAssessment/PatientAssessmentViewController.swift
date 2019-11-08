@@ -610,22 +610,31 @@ class CaseSheetViewController: FormViewController{
                 row.title = "Submit"
                 }.onCellSelection({ buttonCell, buttonRow in
                     self.updateListItems()
-                    
-                    //Patient
-                    do{
-                        let data = try FirebaseEncoder().encode(self.patient)
+                    let alert = UIAlertController(title: "Submit?", message: "This action cannot be undone", preferredStyle: UIAlertController.Style.alert)
 
-                        self.ref?.child("Patients").child(self.patient.id).setValue(data)
-                        
-                        //Assessment
-                        let data2 = try FirebaseEncoder().encode(self.caseSheet)
-                        self.ref?.child(self.patient.id).child("CaseSheet").setValue(data2)
-                        
-                        self.navigationController?.popViewController(animated: true)
-                    }
-                    catch {
-                        print("error")
-                    }
+                    alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default, handler: { _ in
+                        return
+                    }))
+                    alert.addAction(UIAlertAction(title: "Submit",
+                                                  style: UIAlertAction.Style.default,
+                                                  handler: {(_: UIAlertAction!) in
+                                                                        //Patient
+                                                    do{
+                                                        let data = try FirebaseEncoder().encode(self.patient)
+
+                                                        self.ref?.child("Patients").child(self.patient.id).setValue(data)
+                                                        
+                                                        //Assessment
+                                                        let data2 = try FirebaseEncoder().encode(self.caseSheet)
+                                                        self.ref?.child(self.patient.id).child("CaseSheet").setValue(data2)
+                                                        
+                                                        self.navigationController?.popViewController(animated: true)
+                                                    }
+                                                    catch {
+                                                        print("error")
+                                                    }
+                    }))
+                    self.present(alert, animated: true, completion: nil)
                     
                 })
     }

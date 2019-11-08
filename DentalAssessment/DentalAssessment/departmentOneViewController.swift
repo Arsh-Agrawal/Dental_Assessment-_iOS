@@ -29,28 +29,28 @@ class departmentOneViewController: UIViewController {
         
         //check for name and text and send pid to patient assessment
         
-        var name = nameTextField.text
-        var phone = phoneTextField.text
+        let name = nameTextField.text
+        let phone = phoneTextField.text
         ref = Database.database().reference()
         
         
-        
         ref?.child("Patients").queryOrdered(byChild: "name").queryEqual(toValue: name).observe(.childAdded, with: { (snapshot) in
-            
             if !snapshot.exists(){return}
             
-//            if let phone_val = snapshot.value
-//            {
-//                if (String(phone_val) == phone){
-//                    self.pid = (snapshot.ref.parent?.key!)!
-//                }
-//            }
-            
-            
-            
-            
+            if let dict = snapshot.value as? [String:Any]
+            {
+                guard let phone_val = dict["phone"] as? String else {return}
+                if (phone_val == phone){
+                    self.pid = (snapshot.ref.key!)
+                    print("pid from firebase: \(self.pid)")
+                    self.startAssessmentView()
+                }
+            }
+            else {
+                print("Cannot typecast")
+                print(snapshot)
+            }
         })
-        
     }
     @IBAction func newPatientButton(_ sender: Any) {
         
@@ -65,8 +65,8 @@ class departmentOneViewController: UIViewController {
             let data = try FirebaseEncoder().encode(patient)
             reference?.setValue(data)
             pid = (reference?.key)!
-            
-            //call new view controller 
+            //call new view controller
+            startAssessmentView()
         }
         catch
         {
@@ -74,6 +74,13 @@ class departmentOneViewController: UIViewController {
         }
         
         
+    }
+    
+    func startAssessmentView(){
+        let pavc = UIStoryboard.init(name: "PatientAssessment", bundle: Bundle.main).instantiateInitialViewController() as? CaseSheetViewController
+        guard let patientAssessment = pavc else {return}
+        patientAssessment.patient.id = pid
+        self.navigationController?.pushViewController(patientAssessment, animated: true)
     }
     
     /*
