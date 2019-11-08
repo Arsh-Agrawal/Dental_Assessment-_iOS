@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Lmj-Zx-cve">
-    <device id="ipad9_7" orientation="portrait" layout="fullscreen" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Lmj-Zx-cve">
+    <device id="ipad9_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -11,7 +13,7 @@
         <!--Patient Assessment-->
         <scene sceneID="EXe-3g-sIE">
             <objects>
-                <viewController storyboardIdentifier="DepartmentOnePage" id="Lmj-Zx-cve" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DepartmentOnePage" id="Lmj-Zx-cve" customClass="departmentOneViewController" customModule="DentalAssessment" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="B0V-Oj-FNY">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -20,19 +22,35 @@
                                 <rect key="frame" x="129" y="226" width="156" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="etd-C4-ZV5">
-                                <rect key="frame" x="218.5" y="485.5" width="331" height="53"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
-                                <state key="normal" title="Start New Assessment"/>
-                                <connections>
-                                    <segue destination="QrU-m8-tLK" kind="show" id="lex-h2-AcN"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="df5-dL-fVe">
+                                <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UzM-TJ-3yF">
+                                        <rect key="frame" x="0.0" y="0.0" width="768" height="502"/>
+                                        <state key="normal" title="start new assessment with exsisting patient"/>
+                                        <connections>
+                                            <segue destination="hpu-w7-YvP" kind="show" id="K3M-V0-4jG"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bBz-64-Ava">
+                                        <rect key="frame" x="0.0" y="502" width="768" height="502"/>
+                                        <state key="normal" title="start new assessment with a new patient"/>
+                                        <connections>
+                                            <action selector="newPatientButton:" destination="Lmj-Zx-cve" eventType="touchUpInside" id="tNG-sD-1eG"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="bBz-64-Ava" firstAttribute="height" secondItem="UzM-TJ-3yF" secondAttribute="height" id="KkZ-kH-lAx"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="tertiarySystemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="etd-C4-ZV5" firstAttribute="centerY" secondItem="B0V-Oj-FNY" secondAttribute="centerY" id="FDH-zq-gRz"/>
-                            <constraint firstItem="etd-C4-ZV5" firstAttribute="centerX" secondItem="B0V-Oj-FNY" secondAttribute="centerX" id="i4d-gW-N9b"/>
+                            <constraint firstItem="df5-dL-fVe" firstAttribute="leading" secondItem="rl8-Zi-Dxi" secondAttribute="leading" id="1HP-ue-AGm"/>
+                            <constraint firstItem="rl8-Zi-Dxi" firstAttribute="trailing" secondItem="df5-dL-fVe" secondAttribute="trailing" id="AUG-YG-14z"/>
+                            <constraint firstItem="rl8-Zi-Dxi" firstAttribute="bottom" secondItem="df5-dL-fVe" secondAttribute="bottom" id="Cb7-dF-Vg1"/>
+                            <constraint firstItem="df5-dL-fVe" firstAttribute="top" secondItem="rl8-Zi-Dxi" secondAttribute="top" id="v44-p3-aDa"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="rl8-Zi-Dxi"/>
                     </view>
@@ -49,6 +67,63 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VTq-su-MLK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="375" y="1985"/>
+        </scene>
+        <!--Department One View Controller-->
+        <scene sceneID="wmk-Mx-P4y">
+            <objects>
+                <viewController id="hpu-w7-YvP" customClass="departmentOneViewController" customModule="DentalAssessment" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pDD-Jv-Cdc">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DWg-aa-Aaa">
+                                <rect key="frame" x="133" y="349" width="45" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Phone" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XKQ-bO-pY8">
+                                <rect key="frame" x="134" y="433" width="49" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7fo-9D-PIV">
+                                <rect key="frame" x="238" y="344" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="m9O-r2-Ppk">
+                                <rect key="frame" x="238" y="428" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T6D-wg-7Ac">
+                                <rect key="frame" x="202" y="525" width="38" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Login"/>
+                                <connections>
+                                    <action selector="existingPatientButton:" destination="hpu-w7-YvP" eventType="touchUpInside" id="VzY-FE-u5f"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="WiC-OM-DQF"/>
+                    </view>
+                    <connections>
+                        <outlet property="nameTextField" destination="7fo-9D-PIV" id="b4i-Nh-kqo"/>
+                        <outlet property="phoneTextField" destination="m9O-r2-Ppk" id="N0c-1h-AJF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VBL-Cg-0O8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="452" y="1991"/>
         </scene>
     </scenes>
 </document>

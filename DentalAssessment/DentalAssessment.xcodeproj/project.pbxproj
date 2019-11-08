@@ -43,6 +43,7 @@
 		3FCA12CF235F3EB5000AACA0 /* DocumentSerializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCA12CE235F3EB5000AACA0 /* DocumentSerializable.swift */; };
 		E97EED7D23641C110091C03D /* CaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97EED7C23641C110091C03D /* CaseViewController.swift */; };
 		E97EED81236430540091C03D /* IncomingPatientsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97EED80236430540091C03D /* IncomingPatientsViewController.swift */; };
+		E97EED85237580890091C03D /* departmentOneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97EED84237580890091C03D /* departmentOneViewController.swift */; };
 		E9836E28234CC7E4004F4523 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9836E27234CC7E4004F4523 /* WelcomeViewController.swift */; };
 		E9836E2A234CC83A004F4523 /* HospitalDashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9836E29234CC83A004F4523 /* HospitalDashboardViewController.swift */; };
 		E9836E302351D062004F4523 /* PatientAppointmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9836E2F2351D062004F4523 /* PatientAppointmentViewController.swift */; };
@@ -91,6 +92,7 @@
 		D9B95394EB6FCDEE609DA7DD /* Pods-DentalAssessment.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DentalAssessment.debug.xcconfig"; path = "Target Support Files/Pods-DentalAssessment/Pods-DentalAssessment.debug.xcconfig"; sourceTree = "<group>"; };
 		E97EED7C23641C110091C03D /* CaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaseViewController.swift; sourceTree = "<group>"; };
 		E97EED80236430540091C03D /* IncomingPatientsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomingPatientsViewController.swift; sourceTree = "<group>"; };
+		E97EED84237580890091C03D /* departmentOneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = departmentOneViewController.swift; sourceTree = "<group>"; };
 		E9836E27234CC7E4004F4523 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		E9836E29234CC83A004F4523 /* HospitalDashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HospitalDashboardViewController.swift; sourceTree = "<group>"; };
 		E9836E2F2351D062004F4523 /* PatientAppointmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientAppointmentViewController.swift; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 				E97EED80236430540091C03D /* IncomingPatientsViewController.swift */,
 				3F2B085923435AAB004B484C /* ViewController.swift */,
 				3F0725072361C68500699D59 /* PatientAssessmentViewController.swift */,
+				E97EED84237580890091C03D /* departmentOneViewController.swift */,
 				3F657A4E23683BFE00D15EAC /* TeethView.xib */,
 				3F657A502368433B00D15EAC /* TeethView.swift */,
 				E9836E27234CC7E4004F4523 /* WelcomeViewController.swift */,
@@ -363,6 +366,7 @@
 				3FB3EA96234C8BD000CE1215 /* PatientAppointment.swift in Sources */,
 				3FB3EAA0234C9ECF00CE1215 /* IntraoralExamination.swift in Sources */,
 				3FB3EAAA234CA4A400CE1215 /* Doctor.swift in Sources */,
+				E97EED85237580890091C03D /* departmentOneViewController.swift in Sources */,
 				E9836E2A234CC83A004F4523 /* HospitalDashboardViewController.swift in Sources */,
 				3F657A512368433B00D15EAC /* TeethView.swift in Sources */,
 			);
