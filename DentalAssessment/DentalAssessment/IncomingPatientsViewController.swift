@@ -9,6 +9,12 @@
 import UIKit
 import Firebase
 
+class PatientTableViewCell: UITableViewCell{
+    @IBOutlet var patientName: UILabel!
+    @IBOutlet var phoneNumber: UILabel!
+    @IBOutlet var date: UILabel!
+}
+
 class IncomingPatientsViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
@@ -46,7 +52,8 @@ class IncomingPatientsViewController: UIViewController,UITableViewDelegate,UITab
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell")
-        cell?.textLabel?.text = postData[indexPath.row]
+        guard let patientCell = cell as? PatientTableViewCell else {return PatientTableViewCell()}
+        patientCell.patientName?.text = postData[indexPath.row]
         return cell!
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -69,3 +76,4 @@ class IncomingPatientsViewController: UIViewController,UITableViewDelegate,UITab
     */
 
 }
+
