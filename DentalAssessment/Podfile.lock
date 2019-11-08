@@ -1,4 +1,5 @@
 PODS:
+  - CodableFirebase (0.2.1)
   - Eureka (5.0.1)
   - Firebase/Analytics (6.9.0):
     - Firebase/Core
@@ -87,6 +88,7 @@ PODS:
     - Eureka (~> 5.0)
 
 DEPENDENCIES:
+  - CodableFirebase
   - Eureka (~> 5.0.0)
   - Firebase/Analytics
   - Firebase/Auth
@@ -96,6 +98,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
+    - CodableFirebase
     - Eureka
     - SuggestionRow
   trunk:
@@ -117,6 +120,7 @@ SPEC REPOS:
     - nanopb
 
 SPEC CHECKSUMS:
+  CodableFirebase: 0bf201991eeec35eb9fcd987d271ea463cf34a80
   Eureka: da9d2294da234eae40b22e7273b9fc2335502fc1
   Firebase: 2d750c54cda57d5a6ae31212cfe5cc813c6be7e4
   FirebaseAnalytics: 5d9ccbf46ed25d3ec9304d263f85bddf1e93e2d2
@@ -136,6 +140,6 @@ SPEC CHECKSUMS:
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   SuggestionRow: 56423e7f52db720feed251eeb64caed444b4207b
 
-PODFILE CHECKSUM: 7cfb6199db0be3ab45a712175d935f1b721a4552
+PODFILE CHECKSUM: 617c59fbecea39ee33949cb2c286bfa9e55da6c5
 
 COCOAPODS: 1.8.3

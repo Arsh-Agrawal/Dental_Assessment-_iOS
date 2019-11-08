@@ -10,7 +10,8 @@ import Foundation
 
 struct CaseSheet: Codable{
     var id: String = ""
-    var patient: Patient = Patient()
+//    var patient: Patient = Patient()
+    var pid : String = ""
     var hospitalNum: Int = 0
     var date: Date = Date()
     var illnessHistory: String = ""

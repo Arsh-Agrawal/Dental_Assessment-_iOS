@@ -11,6 +11,7 @@ import UIKit
 import Eureka
 import SuggestionRow
 import Firebase
+import CodableFirebase
 
 class CaseSheetViewController: FormViewController{
     
@@ -26,19 +27,16 @@ class CaseSheetViewController: FormViewController{
     var deptVisitPriority: MultivaluedSection = MultivaluedSection()
     var teethViewRow = TeethViewRow()
     var caseSheet = CaseSheet()
+    var patient = Patient()
     let editSwitch = UISwitch()
+    let pid = "312" //set the value of pid
     override func viewDidLoad() {
-        
-        //autofill with db
         
         ref = Database.database().reference()
         
-        dbHandle = ref?.child("Patients").child("patient2").observe(.childAdded, with: { (snapshot) in
-
-            let value = snapshot.value as? NSDictionary
-            
-            self.caseSheet.patient.name = value?["name"] as? String ?? ""
-        })
+        patient.id = pid //set the value which is passed
+        caseSheet.pid = pid
+        
         
         let editLabel = UILabel()
         editLabel.text = "Edit"
@@ -63,37 +61,29 @@ class CaseSheetViewController: FormViewController{
             <<< TextRow() { row in
                 row.title = "Name"
                 row.placeholder = "John Doe"
-                row.value = self.caseSheet.patient.name
+                row.value = self.patient.name
                 //row.disabled = Condition(booleanLiteral: self.allowEdits)
                 }.onChange({ textrow in
                     guard let name = textrow.value else {return}
-                    
-                    let updated_val : [String:String] = ["name":name]
-                    self.ref?.child("Patients").child("patient2").updateChildValues(updated_val)
-                    
-                    
-                    self.caseSheet.patient.name = name
+                    self.patient.name = name
                     
                 })
             <<< TextRow() { row in
                 row.title = "Age"
                 row.placeholder = "25"
-                if caseSheet.patient.age > 0 {
-                    row.value = String(caseSheet.patient.age)
+                if patient.age > 0 {
+                    row.value = String(patient.age)
                 }
                 }.onChange({ textrow in
                     guard let age = Int(textrow.value ?? "") else {return}
-                    
-                    let updated_val : [String:Int] = ["age":age]
-                    self.ref?.child("Patients").child("patient2").updateChildValues(updated_val)
-                    
-                    self.caseSheet.patient.age = age
+    
+                    self.patient.age = age
                 })
             <<< SegmentedRow<String>() { row in
                 row.title = "Sex"
                 row.options = ["Male","Female"]
-                if caseSheet.patient.sex == 0 || caseSheet.patient.sex == 1 {
-                    row.value = row.options?[caseSheet.patient.sex]
+                if patient.sex == 0 || patient.sex == 1 {
+                    row.value = row.options?[patient.sex]
                 }
                 }.cellSetup { cell, _ in
                     guard let titleLabel = cell.titleLabel else {return}
@@ -105,23 +95,19 @@ class CaseSheetViewController: FormViewController{
                     
                     switch(sex){
                     case "Male":
-                        self.caseSheet.patient.sex = 0
+                        self.patient.sex = 0
                     default:
-                        self.caseSheet.patient.sex = 1
+                        self.patient.sex = 1
                     }
-                    
-                    let updated_val : [String:Int] = ["sex":self.caseSheet.patient.sex]
-                    self.ref?.child("Patients").child("patient2").updateChildValues(updated_val)
+
                 })
             <<< PhoneRow() { row in
                 row.title = "Phone"
                 row.placeholder = "+91 1234567890"
-                row.value = self.caseSheet.patient.phone
+                row.value = self.patient.phone
                 }.onChange({ textrow in
                     guard let phone = textrow.value else {return}
-                    let updated_val : [String:String] = ["phone":phone]
-                    self.ref?.child("Patients").child("patient2").updateChildValues(updated_val)
-                    self.caseSheet.patient.phone = phone
+                    self.patient.phone = phone
                 })
             <<< LabelRow {row in
                 row.title = "Address"
@@ -129,18 +115,16 @@ class CaseSheetViewController: FormViewController{
             <<< TextAreaRow { row in
                 row.title = "Address"
                 row.placeholder = "Street Address\nLocality\nCity, State\nPincode"
-                row.value = self.caseSheet.patient.address
+                row.value = self.patient.address
                 }.onChange({ textrow in
                     guard let addr = textrow.value else {return}
-                    let updated_val : [String:String] = ["address":addr]
-                    self.ref?.child("Patients").child("patient2").updateChildValues(updated_val)
-                    self.caseSheet.patient.address = addr
+                    self.patient.address = addr
                 })
             
             
             +++ Section("Assessment")
             <<< TextRow() { row in
-                row.title = "Hosptial Number"
+                row.title = "Hospital Number"
                 row.placeholder = "123"
                 if self.caseSheet.hospitalNum > 0 {
                     row.value = String(self.caseSheet.hospitalNum)
@@ -624,14 +608,23 @@ class CaseSheetViewController: FormViewController{
                 row.title = "Submit"
                 }.onCellSelection({ buttonCell, buttonRow in
                     self.updateListItems()
+                    
+                    //Patient
                     do{
-                        let data = try JSONEncoder().encode(self.caseSheet)
-                        print(String(data: data, encoding: .utf8)!)
+                        let data = try FirebaseEncoder().encode(self.patient)
+
+                        self.ref?.child("Patients").child(self.patient.id).setValue(data)
+                        
+                        //Assessment
+                        let data2 = try FirebaseEncoder().encode(self.caseSheet)
+                        self.ref?.child(self.patient.id).child("CaseSheet").setValue(data2)
+                        
                         self.navigationController?.popViewController(animated: true)
                     }
                     catch {
                         print("error")
                     }
+                    
                 })
     }
     func updateListItems(){
