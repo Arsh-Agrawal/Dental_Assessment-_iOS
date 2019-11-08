@@ -34,7 +34,7 @@ class departmentOneViewController: UIViewController {
         ref = Database.database().reference()
         
         
-        ref?.child("Patients").queryOrdered(byChild: "name").queryEqual(toValue: name).observe(.childAdded, with: { (snapshot) in
+        ref?.child("Patients").queryOrdered(byChild: "name").queryEqual(toValue: name).observeSingleEvent(of: .childAdded, with: { (snapshot) in
             if !snapshot.exists(){return}
             
             if let dict = snapshot.value as? [String:Any]
