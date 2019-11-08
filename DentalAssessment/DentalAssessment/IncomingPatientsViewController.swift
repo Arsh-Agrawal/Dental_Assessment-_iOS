@@ -12,7 +12,7 @@ import Firebase
 class IncomingPatientsViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
-    
+    var departmentId: Int = 1
     var postData = [String]()
     var ref: DatabaseReference?
     var dbHandle: DatabaseHandle?
@@ -26,7 +26,7 @@ class IncomingPatientsViewController: UIViewController,UITableViewDelegate,UITab
         
         ref = Database.database().reference()
         
-        dbHandle = ref?.child("dept_list").child("department1").observe(.childAdded, with: { (snapshot) in
+        dbHandle = ref?.child("dept_list").child("department\(self.departmentId)").observe(.childAdded, with: { (snapshot) in
             
             let post = snapshot.value as? String
             

@@ -19,9 +19,14 @@ class HospitalDashboardViewController: UITableViewController {
         
         // Do any additional setup after loading the view.
     }
+    // MARK: - Navigation
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if(indexPath.row > 0){
-            performSegue(withIdentifier: "incomingPatientsSegue", sender: nil)
+            let incomingPatientsView = UIStoryboard.init(name: "IncomingPatients", bundle: Bundle.main).instantiateInitialViewController() as? IncomingPatientsViewController
+            guard let incomingPatients = incomingPatientsView else {return}
+            incomingPatients.departmentId = indexPath.row
+            self.navigationController?.pushViewController(incomingPatients, animated: true)
         }
     }
     
@@ -30,7 +35,7 @@ class HospitalDashboardViewController: UITableViewController {
         dismiss(animated: true, completion: nil)
     }
     /*
-    // MARK: - Navigation
+    
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
