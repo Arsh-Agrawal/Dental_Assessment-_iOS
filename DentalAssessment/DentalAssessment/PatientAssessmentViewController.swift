@@ -455,7 +455,7 @@ class CaseSheetViewController: FormViewController{
                 }.onChange({ segmentedRow in
                     guard let halitosis = segmentedRow.value else {return}
                     switch(halitosis){
-                    case "yes":
+                    case "Yes":
                         self.caseSheet.intraoralExamination.halitosis = true
                     default:
                         self.caseSheet.intraoralExamination.halitosis = false
@@ -474,7 +474,7 @@ class CaseSheetViewController: FormViewController{
                 }.onChange({ segmentedRow in
                     guard let stains = segmentedRow.value else {return}
                     switch(stains){
-                    case "yes":
+                    case "Yes":
                         self.caseSheet.intraoralExamination.stains = true
                     default:
                         self.caseSheet.intraoralExamination.stains = false
@@ -493,7 +493,7 @@ class CaseSheetViewController: FormViewController{
                 }.onChange({ segmentedRow in
                     guard let calculus = segmentedRow.value else {return}
                     switch(calculus){
-                    case "yes":
+                    case "Yes":
                         self.caseSheet.intraoralExamination.calculus = true
                     default:
                         self.caseSheet.intraoralExamination.calculus = false
@@ -510,6 +510,8 @@ class CaseSheetViewController: FormViewController{
                 }
             }
             if self.caseSheet.intraoralExamination.hardTissue.count > 0{
+                print("Teeth view load")
+                print(self.caseSheet.intraoralExamination.hardTissue.count)
                 for i in Range(1...self.caseSheet.intraoralExamination.hardTissue.count-1) {
                     row.cell.statusButtons[i].titleLabel?.text = self.caseSheet.intraoralExamination.hardTissue[i]
                 }
@@ -765,7 +767,9 @@ class CaseSheetViewController: FormViewController{
         for statusButton in statusButtons {
             if let titleLabel = statusButton.titleLabel { self.caseSheet.intraoralExamination.hardTissue.append(titleLabel.text ?? "-")
             }
+            else { print("No title lable while loading")}
         }
+        print(self.caseSheet)
     }
     
     @objc func editButtonPushed(_ sender: UIButton){
