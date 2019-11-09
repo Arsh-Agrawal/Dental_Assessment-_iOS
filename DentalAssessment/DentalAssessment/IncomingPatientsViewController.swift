@@ -59,6 +59,33 @@ class IncomingPatientsViewController: UIViewController,UITableViewDelegate,UITab
         // Do any additional setup after loading the view.
     }
     
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        
+//        let deleteAction  = UITableViewRowAction(style: .default, title: "Delete") { (action: UITableViewRowAction, indexPath: IndexPath) in
+//
+//            let deleteMenu = UIAlertController(title: nil, message: "Are you sure?", preferredStyle: .actionSheet)
+//
+//            let appDeleteAction = UIAlertAction(title: "Delete", style: .default, handler: nil)
+//            deleteMenu.addAction(appDeleteAction)
+//        }
+        
+        let deleteAction = UITableViewRowAction(style: .default, title: "delete" , handler: { (action:UITableViewRowAction, indexPath:IndexPath) -> Void in
+            // 4
+            let deleteMenu = UIAlertController(title: nil, message: "Are you sure?", preferredStyle: .actionSheet)
+            
+            let appDeleteAction = UIAlertAction(title: "Rate", style: .default, handler: nil)
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+            
+            deleteMenu.addAction(appDeleteAction)
+            deleteMenu.addAction(cancelAction)
+            
+            self.present(deleteMenu, animated: true, completion: nil)
+        })
+        
+        return [deleteAction]
+        
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return postData.count
     }
@@ -84,11 +111,11 @@ class IncomingPatientsViewController: UIViewController,UITableViewDelegate,UITab
             
             print("before ref")
             
+            
+            //Paient
             ref?.child("Patients").observe(.childAdded, with: { (snapshot) in
                 
                 if !snapshot.exists() {return}
-//                print("snap exists")
-//                print(snapshot.key)
                 
                 if snapshot.key != self.postData[indexPath.row][3]{return}
                 
@@ -103,45 +130,39 @@ class IncomingPatientsViewController: UIViewController,UITableViewDelegate,UITab
                     guard let age = Dictionary["age"] as? Int else {return}
                     print(age)
                     guard let sex = Dictionary["sex"] as? Int else {return}
-                    print(sex)
                     guard let addr = Dictionary["address"] as? String else {return}
 
-                    print(addr)
-                    print("storing data")
                     
                     patientAssessment.patient.name = name
                     patientAssessment.patient.phone = phone
                     patientAssessment.patient.sex = sex
                     patientAssessment.patient.age = age
                     patientAssessment.patient.address = addr
+                    patientAssessment.patient.id = snapshot.key
+                    
+                    self.ref?.child(self.postData[indexPath.row][3]).observe(.childAdded, with: { (snapshot) in
+                        guard let value = snapshot.value else { return }
+                        do {
+                            let model = try FirebaseDecoder().decode(CaseSheet.self, from: value)
+                            patientAssessment.caseSheet = model
+                            print("patient assessment")
+                            print(patientAssessment.caseSheet)
+                            
+                            self.navigationController?.pushViewController(patientAssessment, animated: true)
+                            
+                            
+                        } catch let error {
+                            print("in error")
+                            print(error)
+                        }
+                        
+                    })
                 }
                 
                 
             })
             
-//            self.ref?.child("Patients").child(self.patient.id).setValue(data)
             
-            //case sheet data
-            
-//            print("before ref")
-//            ref?.child(postData[indexPath.row][3]).observe(.childAdded, with: { (snapshot) in
-////                print(snapshot)
-//                guard let value = snapshot.value else { return }
-//                do {
-//                    let model = try FirebaseDecoder().decode(CaseSheet.self, from: value)
-//                    patientAssessment.caseSheet = model
-//                    print("patient assessment")
-//                    print(patientAssessment.caseSheet)
-//
-//
-//                } catch let error {
-//                    print("in error")
-//                    print(error)
-//                }
-//
-//            })
-            print("called")
-            //performSegue(withIdentifier: "caseSheetSegue", sender: nil)
         }
     }
 
