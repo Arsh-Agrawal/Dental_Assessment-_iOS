@@ -81,23 +81,65 @@ class IncomingPatientsViewController: UIViewController,UITableViewDelegate,UITab
             guard let patientAssessment = pavc else {return}
             
             ref = Database.database().reference()
+            
             print("before ref")
-            ref?.child(postData[indexPath.row][3]).observe(.childAdded, with: { (snapshot) in
-//                print(snapshot)
-                guard let value = snapshot.value else { return }
-                do {
-                    let model = try FirebaseDecoder().decode(CaseSheet.self, from: value)
-                    print(patientAssessment.caseSheet.intraoralExamination.hardTissue)
-                    patientAssessment.caseSheet = model
-                    print("patient assessment")
-                    print(patientAssessment.caseSheet.intraoralExamination.hardTissue)
-                    self.navigationController?.pushViewController(pavc!, animated: true)
-                } catch let error {
-                    print("in error")
-                    print(error)
+            
+            ref?.child("Patients").observe(.childAdded, with: { (snapshot) in
+                
+                if !snapshot.exists() {return}
+//                print("snap exists")
+//                print(snapshot.key)
+                
+                if snapshot.key != self.postData[indexPath.row][3]{return}
+                
+                if let Dictionary = snapshot.value as? [String:AnyObject] ,Dictionary.count > 0{
+
+                    print("inside if let")
+
+                    guard let name = Dictionary["name"] as? String else {return}
+                    print(name)
+                    guard let phone = Dictionary["phone"] as? String else {return}
+                    print(phone)
+                    guard let age = Dictionary["age"] as? Int else {return}
+                    print(age)
+                    guard let sex = Dictionary["sex"] as? Int else {return}
+                    print(sex)
+                    guard let addr = Dictionary["address"] as? String else {return}
+
+                    print(addr)
+                    print("storing data")
+                    
+                    patientAssessment.patient.name = name
+                    patientAssessment.patient.phone = phone
+                    patientAssessment.patient.sex = sex
+                    patientAssessment.patient.age = age
+                    patientAssessment.patient.address = addr
                 }
                 
+                
             })
+            
+//            self.ref?.child("Patients").child(self.patient.id).setValue(data)
+            
+            //case sheet data
+            
+//            print("before ref")
+//            ref?.child(postData[indexPath.row][3]).observe(.childAdded, with: { (snapshot) in
+////                print(snapshot)
+//                guard let value = snapshot.value else { return }
+//                do {
+//                    let model = try FirebaseDecoder().decode(CaseSheet.self, from: value)
+//                    patientAssessment.caseSheet = model
+//                    print("patient assessment")
+//                    print(patientAssessment.caseSheet)
+//
+//
+//                } catch let error {
+//                    print("in error")
+//                    print(error)
+//                }
+//
+//            })
             print("called")
             //performSegue(withIdentifier: "caseSheetSegue", sender: nil)
         }
