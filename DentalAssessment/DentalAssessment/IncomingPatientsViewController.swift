@@ -61,29 +61,37 @@ class IncomingPatientsViewController: UIViewController,UITableViewDelegate,UITab
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         
-//        let deleteAction  = UITableViewRowAction(style: .default, title: "Delete") { (action: UITableViewRowAction, indexPath: IndexPath) in
-//
-//            let deleteMenu = UIAlertController(title: nil, message: "Are you sure?", preferredStyle: .actionSheet)
-//
-//            let appDeleteAction = UIAlertAction(title: "Delete", style: .default, handler: nil)
-//            deleteMenu.addAction(appDeleteAction)
-//        }
-        
-        let deleteAction = UITableViewRowAction(style: .default, title: "delete" , handler: { (action:UITableViewRowAction, indexPath:IndexPath) -> Void in
+        let deleteAction = UITableViewRowAction(style: .default, title: "Delete" , handler: { (action:UITableViewRowAction, indexPath:IndexPath) -> Void in
             // 4
-            let deleteMenu = UIAlertController(title: nil, message: "Are you sure?", preferredStyle: .actionSheet)
+            let deleteMenu = UIAlertController(title: nil, message: "Are you sure?", preferredStyle: .alert)
             
-            let appDeleteAction = UIAlertAction(title: "Rate", style: .default, handler: nil)
+            let appDeleteAction = UIAlertAction(title: "Delete", style: .default, handler: {(_: UIAlertAction!) in
+//                self.ref = Database.database().reference()
+                print("deleted")
+                self.ref?.child("dept_list").child("department\(self.departmentId)").child(self.postData[indexPath.row][3]).removeValue()
+                
+                self.postData.remove(at: indexPath.row)
+                
+                self.tableView.reloadData()
+                return
+            })
             let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
             
+                
             deleteMenu.addAction(appDeleteAction)
             deleteMenu.addAction(cancelAction)
+            
             
             self.present(deleteMenu, animated: true, completion: nil)
         })
         
         return [deleteAction]
         
+    }
+    
+    func removeFromDB(indexpath: IndexPath){
+        
+        ref = Database.database().reference()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

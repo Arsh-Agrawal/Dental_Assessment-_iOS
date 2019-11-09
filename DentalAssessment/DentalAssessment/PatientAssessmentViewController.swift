@@ -714,8 +714,8 @@ class CaseSheetViewController: FormViewController{
                                 df.dateFormat = "dd-MM-yyyy"
                                 let now = df.string(from: self.caseSheet.date)
                                 refer.updateValue(now, forKey: "date")
-
-                                let dept = self.caseSheet.visitPriority?[0]
+                                guard let visitPriority = self.caseSheet.visitPriority else {return}
+                                let dept = visitPriority[0]
                                 var department:String = ""
                                 
                                 if dept == "2. Conservative Dentistry"{
