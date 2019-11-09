@@ -41,7 +41,6 @@ class PatientAppointmentViewController: UIViewController,UITableViewDelegate,UIT
                 self.tableView.reloadData()  //reloading the table to get the value
             }
         })
-        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

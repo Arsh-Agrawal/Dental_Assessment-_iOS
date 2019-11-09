@@ -38,6 +38,8 @@ class CaseSheetViewController: FormViewController{
     var patient = Patient()
     let editSwitch = UISwitch()
     let pid = "312" //set the value of pid
+    var defaults = UserDefaults.standard
+    
     override func viewDidLoad() {
         
         ref = Database.database().reference()
@@ -670,6 +672,9 @@ class CaseSheetViewController: FormViewController{
             <<< TextRow() { row in
                 row.title = "Staff"
                 row.placeholder = "Staff name"
+                if let username = self.defaults.string(forKey: "username") {
+                    row.value = username
+                }
             }
             <<< ButtonRow() { row in
                 row.title = "Submit"

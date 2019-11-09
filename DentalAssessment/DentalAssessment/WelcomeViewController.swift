@@ -48,6 +48,17 @@ class WelcomeViewController: UIViewController {
             view.incorrectDetailsLabel.isHidden = true
             guard let authResult = authResult else {return}
             view.defaults.set(authResult.user.uid, forKey: "userid")
+            view.dbHandle = view.ref?.child("Staff").child(authResult.user.uid).observe(.value, with: { (snapshot) in
+                if !snapshot.exists()
+                {
+                    print("snapshot returned but doesn't exist")
+                    return;
+                }
+                let value = snapshot.value as? NSDictionary
+                if let name = value?["name"] as? String {
+                    view.defaults.set(name, forKey: "username")
+                }
+            })
             view.takeUserToDashboard()
         }
     }
