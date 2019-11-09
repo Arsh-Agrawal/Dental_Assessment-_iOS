@@ -19,7 +19,7 @@ class IncomingPatientsViewController: UIViewController,UITableViewDelegate,UITab
 
     @IBOutlet weak var tableView: UITableView!
     var departmentId: Int = 1
-    var postData = [String]()
+    var postData = [[String]]()
     var ref: DatabaseReference?
     var dbHandle: DatabaseHandle?
     
@@ -34,12 +34,23 @@ class IncomingPatientsViewController: UIViewController,UITableViewDelegate,UITab
         
         dbHandle = ref?.child("dept_list").child("department\(self.departmentId)").observe(.childAdded, with: { (snapshot) in
             
-            let post = snapshot.value as? String
+            if !snapshot.exists(){return}
+
             
-            if let val = post{
-                self.postData.append(val)
-                self.tableView.reloadData()
-            }
+                if let Dictionary = snapshot.value as? [String:AnyObject] ,Dictionary.count > 0{
+                    
+                    print("working")
+                    guard let name = Dictionary["Name"] as? String else {return}
+                    guard let phone = Dictionary["Phone"] as? String else {return}
+                    guard let date = Dictionary["date"] as? String else {return}
+                    
+                    let data = [name,phone,date]
+                    print(data)
+                    
+                    self.postData.append(data)
+                    self.tableView.reloadData()
+                    
+                }
         })
 
         // Do any additional setup after loading the view.
@@ -53,7 +64,9 @@ class IncomingPatientsViewController: UIViewController,UITableViewDelegate,UITab
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell")
         guard let patientCell = cell as? PatientTableViewCell else {return PatientTableViewCell()}
-        patientCell.patientName?.text = postData[indexPath.row]
+        patientCell.patientName?.text = postData[indexPath.row][0]
+        patientCell.phoneNumber?.text = postData[indexPath.row][1]
+        patientCell.date?.text = postData[indexPath.row][2]
         return cell!
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
