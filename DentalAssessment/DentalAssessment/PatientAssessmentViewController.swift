@@ -34,9 +34,9 @@ class CaseSheetViewController: FormViewController{
         
         ref = Database.database().reference()
         
-        patient.id = pid //set the value which is passed
-        caseSheet.pid = pid
-        
+        // patient.id = pid //set the value which is passed
+        caseSheet.pid = patient.id
+        print(patient.id)
         
         let editLabel = UILabel()
         editLabel.text = "Edit"
