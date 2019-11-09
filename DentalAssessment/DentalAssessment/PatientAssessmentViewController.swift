@@ -22,6 +22,14 @@ class CaseSheetViewController: FormViewController{
     var teethStatus = ""
     let teethStatuses = ["Decayed (D)", "Decayed with pulpal involvement (Pl)", "Root stump (RS)", "Missing (M)", "Filled (F)", "Mobility (Mo)", "Fracture (#)", "Prosthetic crown (C)", "Removable Partial Denture (RPD)", "Fixed partial denture (FPD)", "Attrition (AT)", "Abrasion (AB)", "Erosion (ER)"]
     let teethStatusesShort = ["D", "Pl", "RS", "M", "F", "Mo", "#", "C", "RPD", "FPD", "AT", "AB", "ER"]
+    let deptList = [
+            "2. Conservative Dentistry",
+            "3. Periodontics",
+            "4. Oral & Maxillofacial Surgery",
+            "5. Prosthodontics",
+            "6. Pedodontics",
+            "7. Orthodontics"
+        ]
     var treatmentsSection: MultivaluedSection = MultivaluedSection()
     var drugsSection: MultivaluedSection = MultivaluedSection()
     var deptVisitPriority: MultivaluedSection = MultivaluedSection()
@@ -554,8 +562,17 @@ class CaseSheetViewController: FormViewController{
                                                         row.placeholder = "Treatment step"
                                                     }
                                                 }
-                                                section <<< TextRow { row in
-                                                    row.placeholder = "Treatment step"
+                                                if let treatments = self.caseSheet.treatmentPlan {
+                                                    for plan in treatments {
+                                                        section <<< TextRow { row in
+                                                            row.value = plan
+                                                        }
+                                                    }
+                                                }
+                                                else{
+                                                    section <<< TextRow { row in
+                                                        row.placeholder = "Treatment step"
+                                                    }
                                                 }
         }
         drugsSection = MultivaluedSection(multivaluedOptions: [.Reorder, .Insert, .Delete],
@@ -570,10 +587,20 @@ class CaseSheetViewController: FormViewController{
                                                     row.placeholder = "Drug name"
                                                 }
                                             }
-                                            section <<< TextRow { row in
-                                                row.placeholder = "Drug name"
+                                            if let drugs = self.caseSheet.prescriptions {
+                                                for drug in drugs {
+                                                    section <<< TextRow { row in
+                                                        row.value = drug
+                                                    }
+                                                }
+                                            }
+                                            else{
+                                                section <<< TextRow { row in
+                                                    row.placeholder = "Drug name"
+                                                }
                                             }
         }
+
         deptVisitPriority = MultivaluedSection(multivaluedOptions: [.Reorder, .Insert, .Delete],
                                                header: "Priority", footer: "priority in which to visit other departments"){ section in
                                                 section.addButtonProvider = { sec in
@@ -583,14 +610,15 @@ class CaseSheetViewController: FormViewController{
                                                 }
                                                 section.multivaluedRowToInsertAt = { index in
                                                     return PushRow<String>() { row in
-                                                        row.options = [
-                                                            "2. Conservative Dentistry",
-                                                            "3. Periodontics",
-                                                            "4. Oral & Maxillofacial Surgery",
-                                                            "5. Prosthodontics",
-                                                            "6. Pedodontics",
-                                                            "7. Orthodontics"
-                                                        ]
+                                                        row.options = self.deptList
+                                                    }
+                                                }
+                                                if let visitPriority = self.caseSheet.visitPriority {
+                                                    for dept in visitPriority{
+                                                        section <<< PushRow<String>(){ row in
+                                                            row.options = self.deptList
+                                                            row.value = dept
+                                                        }
                                                     }
                                                 }
         }
@@ -641,7 +669,7 @@ class CaseSheetViewController: FormViewController{
                                 let now = df.string(from: self.caseSheet.date)
                                 refer.updateValue(now, forKey: "date")
 
-                                let dept = self.caseSheet.visitPriority[0]
+                                let dept = self.caseSheet.visitPriority?[0]
                                 var department:String = ""
                                 
                                 if dept == "2. Conservative Dentistry"{
