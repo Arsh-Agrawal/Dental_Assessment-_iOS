@@ -71,6 +71,14 @@ class CaseSheetViewController: FormViewController{
                 row.title = "Name"
                 row.placeholder = "John Doe"
                 row.value = self.patient.name
+                var rules = RuleSet<String>()
+                rules.add(rule: RuleRequired())
+                row.add(ruleSet: rules)
+                row.cellUpdate {(cell, row) in
+                    if !row.isValid {
+                      cell.titleLabel?.textColor = .red
+                    }
+                }
                 //row.disabled = Condition(booleanLiteral: self.allowEdits)
                 }.onChange({ textrow in
                     guard let name = textrow.value else {return}
@@ -83,6 +91,14 @@ class CaseSheetViewController: FormViewController{
                 if patient.age > 0 {
                     row.value = String(patient.age)
                 }
+                var rules = RuleSet<String>()
+                rules.add(rule: RuleRequired())
+                row.add(ruleSet: rules)
+                row.cellUpdate {(cell, row) in
+                    if !row.isValid {
+                      cell.titleLabel?.textColor = .red
+                    }
+                }
                 }.onChange({ textrow in
                     guard let age = Int(textrow.value ?? "") else {return}
     
@@ -91,6 +107,14 @@ class CaseSheetViewController: FormViewController{
             <<< SegmentedRow<String>() { row in
                 row.title = "Sex"
                 row.options = ["Male","Female"]
+                var rules = RuleSet<String>()
+                rules.add(rule: RuleRequired())
+                row.add(ruleSet: rules)
+                row.cellUpdate {(cell, row) in
+                    if !row.isValid {
+                      cell.titleLabel?.textColor = .red
+                    }
+                }
                 if patient.sex == 0 || patient.sex == 1 {
                     row.value = row.options?[patient.sex]
                 }
@@ -99,9 +123,6 @@ class CaseSheetViewController: FormViewController{
                     cell.segmentedControl.widthAnchor.constraint(equalTo: titleLabel.widthAnchor).isActive = true
                 }.onChange({ segmentedRow in
                     guard let sex = segmentedRow.value else {return}
-                    
-                    
-                    
                     switch(sex){
                     case "Male":
                         self.patient.sex = 0
@@ -114,6 +135,14 @@ class CaseSheetViewController: FormViewController{
                 row.title = "Phone"
                 row.placeholder = "+91 1234567890"
                 row.value = self.patient.phone
+                var rules = RuleSet<String>()
+                rules.add(rule: RuleRequired())
+                row.add(ruleSet: rules)
+                row.cellUpdate {(cell, row) in
+                    if !row.isValid {
+                      cell.titleLabel?.textColor = .red
+                    }
+                }
                 }.onChange({ textrow in
                     guard let phone = textrow.value else {return}
                     self.patient.phone = phone
@@ -135,6 +164,14 @@ class CaseSheetViewController: FormViewController{
             <<< TextRow() { row in
                 row.title = "Hospital Number"
                 row.placeholder = "123"
+                var rules = RuleSet<String>()
+                rules.add(rule: RuleRequired())
+                row.add(ruleSet: rules)
+                row.cellUpdate {(cell, row) in
+                    if !row.isValid {
+                      cell.titleLabel?.textColor = .red
+                    }
+                }
                 if self.caseSheet.hospitalNum > 0 {
                     row.value = String(self.caseSheet.hospitalNum)
                 }
@@ -470,7 +507,7 @@ class CaseSheetViewController: FormViewController{
                     button.setTitle("-", for: .normal)
                 }
             }
-            if self.caseSheet.intraoralExamination.hardTissue != [] {
+            if self.caseSheet.intraoralExamination.hardTissue.count > 0{
                 for i in Range(1...self.caseSheet.intraoralExamination.hardTissue.count-1) {
                     row.cell.statusButtons[i].titleLabel?.text = self.caseSheet.intraoralExamination.hardTissue[i]
                 }
@@ -638,8 +675,17 @@ class CaseSheetViewController: FormViewController{
                 row.title = "Submit"
                 }.onCellSelection({ buttonCell, buttonRow in
                     self.updateListItems()
+                    let error = self.form.validate()
+                    if error.count > 0 {
+                        print(error)
+                        let alert = UIAlertController(title: "Error", message: "Please fill all required fields", preferredStyle: UIAlertController.Style.alert)
+                        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: { _ in
+                            return
+                        }))
+                        self.present(alert, animated: true, completion: nil)
+                        return
+                    }
                     let alert = UIAlertController(title: "Submit?", message: "This action cannot be undone", preferredStyle: UIAlertController.Style.alert)
-
                     alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default, handler: { _ in
                         return
                     }))
