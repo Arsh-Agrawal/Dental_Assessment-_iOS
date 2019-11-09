@@ -87,11 +87,11 @@ class IncomingPatientsViewController: UIViewController,UITableViewDelegate,UITab
                 guard let value = snapshot.value else { return }
                 do {
                     let model = try FirebaseDecoder().decode(CaseSheet.self, from: value)
+                    print(patientAssessment.caseSheet.intraoralExamination.hardTissue)
                     patientAssessment.caseSheet = model
                     print("patient assessment")
-                    print(patientAssessment.caseSheet)
-                    
-
+                    print(patientAssessment.caseSheet.intraoralExamination.hardTissue)
+                    self.navigationController?.pushViewController(pavc!, animated: true)
                 } catch let error {
                     print("in error")
                     print(error)
@@ -99,8 +99,6 @@ class IncomingPatientsViewController: UIViewController,UITableViewDelegate,UITab
                 
             })
             print("called")
-            self.navigationController?.pushViewController(pavc!, animated: true)
-            
             //performSegue(withIdentifier: "caseSheetSegue", sender: nil)
         }
     }

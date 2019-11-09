@@ -463,7 +463,7 @@ class CaseSheetViewController: FormViewController{
                 }
             }
             if self.caseSheet.intraoralExamination.hardTissue != [] {
-                for i in Range(1...self.caseSheet.intraoralExamination.hardTissue.count) {
+                for i in Range(1...self.caseSheet.intraoralExamination.hardTissue.count-1) {
                     row.cell.statusButtons[i].titleLabel?.text = self.caseSheet.intraoralExamination.hardTissue[i]
                 }
             }
