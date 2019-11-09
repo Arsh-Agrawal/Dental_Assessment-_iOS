@@ -615,24 +615,63 @@ class CaseSheetViewController: FormViewController{
                     alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default, handler: { _ in
                         return
                     }))
-                    alert.addAction(UIAlertAction(title: "Submit",
-                                                  style: UIAlertAction.Style.default,
-                                                  handler: {(_: UIAlertAction!) in
-                                                                        //Patient
-                                                    do{
-                                                        let data = try FirebaseEncoder().encode(self.patient)
+                    alert.addAction(UIAlertAction(title: "Submit",style: UIAlertAction.Style.default,handler: {(_: UIAlertAction!) in
+                        
+                        
+                            do{
+                                //Patient
+                                let data = try FirebaseEncoder().encode(self.patient)
 
-                                                        self.ref?.child("Patients").child(self.patient.id).setValue(data)
+                                 self.ref?.child("Patients").child(self.patient.id).setValue(data)
                                                         
-                                                        //Assessment
-                                                        let data2 = try FirebaseEncoder().encode(self.caseSheet)
-                                                        self.ref?.child(self.patient.id).child("CaseSheet").setValue(data2)
-                                                        
-                                                        self.navigationController?.popViewController(animated: true)
-                                                    }
-                                                    catch {
-                                                        print("error")
-                                                    }
+                                 //CaseSheet
+                                 let data2 = try FirebaseEncoder().encode(self.caseSheet)
+                                self.ref?.child(self.patient.id).child("CaseSheet").setValue(data2)
+                                
+                                print(data2)
+                                
+                                
+                                //refering
+
+                                var refer = [String:String]()
+                                refer.updateValue(self.patient.name, forKey: "Name")
+                                refer.updateValue(self.patient.phone, forKey: "Phone")
+                                let df = DateFormatter()
+                                df.dateFormat = "dd-MM-yyyy"
+                                let now = df.string(from: self.caseSheet.date)
+                                refer.updateValue(now, forKey: "date")
+
+                                let dept = self.caseSheet.visitPriority[0]
+                                var department:String = ""
+                                
+                                if dept == "2. Conservative Dentistry"{
+                                    department = "department1"
+                                }
+                                if dept == "3. Periodontics"{
+                                    department = "department2"
+                                }
+                                if dept == "4. Oral & Maxillofacial Surgery"{
+                                    department = "department3"
+                                }
+                                if dept == "5. Prosthodontics"{
+                                    department = "department4"
+                                }
+                                if dept == "6. Pedodontics"{
+                                    department = "department5"
+                                }
+                                if dept ==  "7. Orthodontics"{
+                                    department = "department6"
+                                }
+                                
+                                
+                                self.ref?.child("dept_list").child(department).child(self.patient.id).updateChildValues(refer)
+                                
+                                self.navigationController?.popViewController(animated: true)
+                                
+                            }
+                            catch {
+                                    print("error")
+                            }
                     }))
                     self.present(alert, animated: true, completion: nil)
                     

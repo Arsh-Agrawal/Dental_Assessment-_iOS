@@ -65,7 +65,12 @@ class departmentOneViewController: UIViewController {
             let data = try FirebaseEncoder().encode(patient)
             reference?.setValue(data)
             pid = (reference?.key)!
+            
             //call new view controller
+            print("in new patient")
+            print(reference!)
+            print(pid)
+            
             startAssessmentView()
         }
         catch
@@ -80,6 +85,7 @@ class departmentOneViewController: UIViewController {
         let pavc = UIStoryboard.init(name: "PatientAssessment", bundle: Bundle.main).instantiateInitialViewController() as? CaseSheetViewController
         guard let patientAssessment = pavc else {return}
         patientAssessment.patient.id = pid
+//        print(pid)
         self.navigationController?.pushViewController(patientAssessment, animated: true)
     }
     

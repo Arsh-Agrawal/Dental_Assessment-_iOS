@@ -8,11 +8,13 @@
 
 import UIKit
 import Firebase
+import CodableFirebase
 
 class PatientTableViewCell: UITableViewCell{
     @IBOutlet var patientName: UILabel!
     @IBOutlet var phoneNumber: UILabel!
     @IBOutlet var date: UILabel!
+    var pid : String = ""
 }
 
 class IncomingPatientsViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
@@ -39,12 +41,13 @@ class IncomingPatientsViewController: UIViewController,UITableViewDelegate,UITab
             
                 if let Dictionary = snapshot.value as? [String:AnyObject] ,Dictionary.count > 0{
                     
-                    print("working")
+//                    print("working")
                     guard let name = Dictionary["Name"] as? String else {return}
                     guard let phone = Dictionary["Phone"] as? String else {return}
                     guard let date = Dictionary["date"] as? String else {return}
-                    
-                    let data = [name,phone,date]
+                    let pid = snapshot.key
+//                    print(pid)
+                    let data = [name,phone,date,pid]
                     print(data)
                     
                     self.postData.append(data)
@@ -73,7 +76,31 @@ class IncomingPatientsViewController: UIViewController,UITableViewDelegate,UITab
         if(indexPath.row >= 0){
             let pavc = UIStoryboard.init(name: "PatientAssessment", bundle: Bundle.main).instantiateInitialViewController() as? CaseSheetViewController
             pavc?.allowEdits = false
+            
+            
+            guard let patientAssessment = pavc else {return}
+            
+            ref = Database.database().reference()
+            print("before ref")
+            ref?.child(postData[indexPath.row][3]).observe(.childAdded, with: { (snapshot) in
+//                print(snapshot)
+                guard let value = snapshot.value else { return }
+                do {
+                    let model = try FirebaseDecoder().decode(CaseSheet.self, from: value)
+                    patientAssessment.caseSheet = model
+                    print("patient assessment")
+                    print(patientAssessment.caseSheet)
+                    
+
+                } catch let error {
+                    print("in error")
+                    print(error)
+                }
+                
+            })
+            print("called")
             self.navigationController?.pushViewController(pavc!, animated: true)
+            
             //performSegue(withIdentifier: "caseSheetSegue", sender: nil)
         }
     }
